@@ -3,14 +3,14 @@ package view;
 import java.awt.Color;
 
 
-public class DatosInicio extends javax.swing.JFrame {
+public class DatosEquipo extends javax.swing.JFrame {
 
     int xMouse,yMouse;
     
     /**
      * Creates new form Principal
      */
-    public DatosInicio() {
+    public DatosEquipo() {
         initComponents();
     }
 
@@ -32,12 +32,18 @@ public class DatosInicio extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        txtCategoria = new javax.swing.JTextField();
+        txtDireccionJugador = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
-        txtNombreTorneo = new javax.swing.JTextField();
+        txtNombreJugador = new javax.swing.JTextField();
         jSeparator2 = new javax.swing.JSeparator();
         jSeparator3 = new javax.swing.JSeparator();
         btnContinuar = new javax.swing.JButton();
+        jLabel6 = new javax.swing.JLabel();
+        txtTelefonoJugador = new javax.swing.JTextField();
+        jSeparator4 = new javax.swing.JSeparator();
+        jLabel7 = new javax.swing.JLabel();
+        txtNumeroJugador = new javax.swing.JTextField();
+        jSeparator5 = new javax.swing.JSeparator();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocationByPlatform(true);
@@ -95,11 +101,11 @@ public class DatosInicio extends javax.swing.JFrame {
         btnDatosTorneo.setBackground(new java.awt.Color(48, 76, 134));
 
         jLabel3.setBackground(new java.awt.Color(245, 246, 243));
-        jLabel3.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(204, 204, 204));
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/trophy.png"))); // NOI18N
-        jLabel3.setText("Datos del torneo");
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/team.png"))); // NOI18N
+        jLabel3.setText("Datos del equipo");
         jLabel3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -152,57 +158,57 @@ public class DatosInicio extends javax.swing.JFrame {
 
         jLabel2.setFont(new java.awt.Font("Roboto Black", 0, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel2.setText("CATEGORIA");
-        background.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 350, -1, -1));
+        jLabel2.setText("DIRECCIÓN");
+        background.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 190, -1, -1));
 
-        txtCategoria.setBackground(new java.awt.Color(255, 255, 255));
-        txtCategoria.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
-        txtCategoria.setForeground(new java.awt.Color(153, 153, 153));
-        txtCategoria.setText("Ingrese la categoria");
-        txtCategoria.setBorder(null);
-        txtCategoria.addMouseListener(new java.awt.event.MouseAdapter() {
+        txtDireccionJugador.setBackground(new java.awt.Color(255, 255, 255));
+        txtDireccionJugador.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        txtDireccionJugador.setForeground(new java.awt.Color(153, 153, 153));
+        txtDireccionJugador.setText("Ingrese la dirección del jugador");
+        txtDireccionJugador.setBorder(null);
+        txtDireccionJugador.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                txtCategoriaMousePressed(evt);
+                txtDireccionJugadorMousePressed(evt);
             }
         });
-        txtCategoria.addActionListener(new java.awt.event.ActionListener() {
+        txtDireccionJugador.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtCategoriaActionPerformed(evt);
+                txtDireccionJugadorActionPerformed(evt);
             }
         });
-        background.add(txtCategoria, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 390, 350, 30));
+        background.add(txtDireccionJugador, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 220, 350, 30));
 
         jLabel4.setFont(new java.awt.Font("Roboto Black", 0, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setText("NOMBRE");
-        background.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 170, -1, -1));
+        background.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 110, -1, -1));
 
-        txtNombreTorneo.setBackground(new java.awt.Color(255, 255, 255));
-        txtNombreTorneo.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
-        txtNombreTorneo.setForeground(new java.awt.Color(153, 153, 153));
-        txtNombreTorneo.setText("Ingrese el nombre del torneo");
-        txtNombreTorneo.setBorder(null);
-        txtNombreTorneo.addMouseListener(new java.awt.event.MouseAdapter() {
+        txtNombreJugador.setBackground(new java.awt.Color(255, 255, 255));
+        txtNombreJugador.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        txtNombreJugador.setForeground(new java.awt.Color(153, 153, 153));
+        txtNombreJugador.setText("Ingrese el nombre del jugador");
+        txtNombreJugador.setBorder(null);
+        txtNombreJugador.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                txtNombreTorneoMouseClicked(evt);
+                txtNombreJugadorMouseClicked(evt);
             }
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                txtNombreTorneoMousePressed(evt);
+                txtNombreJugadorMousePressed(evt);
             }
         });
-        txtNombreTorneo.addActionListener(new java.awt.event.ActionListener() {
+        txtNombreJugador.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtNombreTorneoActionPerformed(evt);
+                txtNombreJugadorActionPerformed(evt);
             }
         });
-        background.add(txtNombreTorneo, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 210, 350, 30));
+        background.add(txtNombreJugador, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 140, 350, 30));
 
         jSeparator2.setForeground(new java.awt.Color(153, 153, 153));
-        background.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 420, 350, 10));
+        background.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 250, 350, 10));
 
         jSeparator3.setForeground(new java.awt.Color(153, 153, 153));
         jSeparator3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        background.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 240, 350, 10));
+        background.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 170, 350, 10));
 
         btnContinuar.setBackground(new java.awt.Color(110, 120, 143));
         btnContinuar.setForeground(new java.awt.Color(0, 0, 0));
@@ -214,6 +220,56 @@ public class DatosInicio extends javax.swing.JFrame {
             }
         });
         background.add(btnContinuar, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 500, -1, 30));
+
+        jLabel6.setFont(new java.awt.Font("Roboto Black", 0, 18)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel6.setText("TELÉFONO");
+        background.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 270, -1, -1));
+
+        txtTelefonoJugador.setBackground(new java.awt.Color(255, 255, 255));
+        txtTelefonoJugador.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        txtTelefonoJugador.setForeground(new java.awt.Color(153, 153, 153));
+        txtTelefonoJugador.setText("Ingrese el teléfono del jugador");
+        txtTelefonoJugador.setBorder(null);
+        txtTelefonoJugador.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                txtTelefonoJugadorMousePressed(evt);
+            }
+        });
+        txtTelefonoJugador.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtTelefonoJugadorActionPerformed(evt);
+            }
+        });
+        background.add(txtTelefonoJugador, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 300, 350, 30));
+
+        jSeparator4.setForeground(new java.awt.Color(153, 153, 153));
+        background.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 330, 350, 10));
+
+        jLabel7.setFont(new java.awt.Font("Roboto Black", 0, 18)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel7.setText("NUMERO DE JUGADOR");
+        background.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 350, -1, -1));
+
+        txtNumeroJugador.setBackground(new java.awt.Color(255, 255, 255));
+        txtNumeroJugador.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        txtNumeroJugador.setForeground(new java.awt.Color(153, 153, 153));
+        txtNumeroJugador.setText("Ingrese el número con el que jugará");
+        txtNumeroJugador.setBorder(null);
+        txtNumeroJugador.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                txtNumeroJugadorMousePressed(evt);
+            }
+        });
+        txtNumeroJugador.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtNumeroJugadorActionPerformed(evt);
+            }
+        });
+        background.add(txtNumeroJugador, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 380, 350, 30));
+
+        jSeparator5.setForeground(new java.awt.Color(153, 153, 153));
+        background.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 410, 350, 10));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -229,13 +285,13 @@ public class DatosInicio extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtCategoriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCategoriaActionPerformed
+    private void txtDireccionJugadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDireccionJugadorActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtCategoriaActionPerformed
+    }//GEN-LAST:event_txtDireccionJugadorActionPerformed
 
-    private void txtNombreTorneoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombreTorneoActionPerformed
+    private void txtNombreJugadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombreJugadorActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtNombreTorneoActionPerformed
+    }//GEN-LAST:event_txtNombreJugadorActionPerformed
 
     private void headerMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_headerMousePressed
         xMouse = evt.getX();
@@ -254,51 +310,79 @@ public class DatosInicio extends javax.swing.JFrame {
         
     }//GEN-LAST:event_jLabel5MouseClicked
 
-    private void txtNombreTorneoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtNombreTorneoMouseClicked
+    private void txtNombreJugadorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtNombreJugadorMouseClicked
 
-    }//GEN-LAST:event_txtNombreTorneoMouseClicked
+    }//GEN-LAST:event_txtNombreJugadorMouseClicked
 
-    private void txtNombreTorneoMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtNombreTorneoMousePressed
+    private void txtNombreJugadorMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtNombreJugadorMousePressed
         
-        if (txtNombreTorneo.getText().equals("Ingrese el nombre del torneo")) {
+        if (txtNombreJugador.getText().equals("Ingrese el nombre del jugador")) {
             
-            txtNombreTorneo.setText("");
-            txtNombreTorneo.setForeground(Color.black);
-            
-        }
-        
-        if (txtCategoria.getText().isEmpty()) {
-            
-            txtCategoria.setText("Ingrese la categoria");
-            txtCategoria.setForeground(Color.gray);
+            txtNombreJugador.setText("");
+            txtNombreJugador.setForeground(Color.black);
             
         }
         
+        if (txtDireccionJugador.getText().isEmpty()) {
+            
+            txtDireccionJugador.setText("Ingrese la dirección del jugador");
+            txtDireccionJugador.setForeground(Color.gray);
+            
+        }
+        
+        if (txtTelefonoJugador.getText().isEmpty()) {
+            
+            txtTelefonoJugador.setText("Ingrese el teléfono del jugador");
+            txtTelefonoJugador.setForeground(Color.gray);
+            
+        }
+        
+        if (txtNumeroJugador.getText().isEmpty()) {
+            
+            txtNumeroJugador.setText("Ingrese el número con el que jugará");
+            txtNumeroJugador.setForeground(Color.gray);
+            
+        }
         
         
-    }//GEN-LAST:event_txtNombreTorneoMousePressed
+    }//GEN-LAST:event_txtNombreJugadorMousePressed
 
-    private void txtCategoriaMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtCategoriaMousePressed
+    private void txtDireccionJugadorMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtDireccionJugadorMousePressed
         
-        if (txtCategoria.getText().equals("Ingrese la categoria")) {
+        if (txtDireccionJugador.getText().equals("Ingrese la dirección del jugador")) {
             
-            txtCategoria.setText("");
-            txtCategoria.setForeground(Color.black);
+            txtDireccionJugador.setText("");
+            txtDireccionJugador.setForeground(Color.black);
             
         }
         
-        if (txtNombreTorneo.getText().isEmpty()) {
+        if (txtNombreJugador.getText().isEmpty()) {
             
-            txtNombreTorneo.setText("Ingrese el nombre del torneo");
-            txtNombreTorneo.setForeground(Color.gray);
+            txtNombreJugador.setText("Ingrese el nombre del jugador");
+            txtNombreJugador.setForeground(Color.gray);
             
         }
         
-    }//GEN-LAST:event_txtCategoriaMousePressed
+        
+        if (txtTelefonoJugador.getText().isEmpty()) {
+            
+            txtTelefonoJugador.setText("Ingrese el teléfono del jugador");
+            txtTelefonoJugador.setForeground(Color.gray);
+            
+        }
+        
+        if (txtNumeroJugador.getText().isEmpty()) {
+            
+            txtNumeroJugador.setText("Ingrese el número con el que jugará");
+            txtNumeroJugador.setForeground(Color.gray);
+            
+        }
+        
+    }//GEN-LAST:event_txtDireccionJugadorMousePressed
 
     private void btnContinuarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnContinuarActionPerformed
         javax.swing.JOptionPane.showMessageDialog(this, "numero");
-        new DatosEquipo().setVisible(true);
+        new DatosJugador().setVisible(true);
         this.hide();
     }//GEN-LAST:event_btnContinuarActionPerformed
 
@@ -309,6 +393,76 @@ public class DatosInicio extends javax.swing.JFrame {
     private void jLabel3MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseExited
         btnDatosTorneo.setBackground(new Color(48,76,134));
     }//GEN-LAST:event_jLabel3MouseExited
+
+    private void txtTelefonoJugadorMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtTelefonoJugadorMousePressed
+        if (txtTelefonoJugador.getText().equals("Ingrese el teléfono del jugador")) {
+            
+            txtTelefonoJugador.setText("");
+            txtTelefonoJugador.setForeground(Color.black);
+            
+        }
+        
+        if (txtNombreJugador.getText().isEmpty()) {
+            
+            txtNombreJugador.setText("Ingrese el nombre del jugador");
+            txtNombreJugador.setForeground(Color.gray);
+            
+        }
+        
+        
+        if (txtDireccionJugador.getText().isEmpty()) {
+            
+            txtDireccionJugador.setText("Ingrese la dirección del jugador");
+            txtDireccionJugador.setForeground(Color.gray);
+            
+        }
+        
+        if (txtNumeroJugador.getText().isEmpty()) {
+            
+            txtNumeroJugador.setText("Ingrese el número con el que jugará");
+            txtNumeroJugador.setForeground(Color.gray);
+            
+        }
+    }//GEN-LAST:event_txtTelefonoJugadorMousePressed
+
+    private void txtTelefonoJugadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTelefonoJugadorActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtTelefonoJugadorActionPerformed
+
+    private void txtNumeroJugadorMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtNumeroJugadorMousePressed
+        if (txtNumeroJugador.getText().equals("Ingrese el número con el que jugará")) {
+            
+            txtNumeroJugador.setText("");
+            txtNumeroJugador.setForeground(Color.black);
+            
+        }
+        
+        if (txtNombreJugador.getText().isEmpty()) {
+            
+            txtNombreJugador.setText("Ingrese el nombre del jugador");
+            txtNombreJugador.setForeground(Color.gray);
+            
+        }
+        
+        
+        if (txtDireccionJugador.getText().isEmpty()) {
+            
+            txtDireccionJugador.setText("Ingrese la dirección del jugador");
+            txtDireccionJugador.setForeground(Color.gray);
+            
+        }
+        
+        if (txtTelefonoJugador.getText().isEmpty()) {
+            
+            txtTelefonoJugador.setText("Ingrese el teléfono del jugador");
+            txtTelefonoJugador.setForeground(Color.gray);
+            
+        }
+    }//GEN-LAST:event_txtNumeroJugadorMousePressed
+
+    private void txtNumeroJugadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNumeroJugadorActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNumeroJugadorActionPerformed
 
     /**
      * @param args the command line arguments
@@ -327,14 +481,26 @@ public class DatosInicio extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(DatosInicio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(DatosEquipo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(DatosInicio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(DatosEquipo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(DatosInicio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(DatosEquipo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(DatosInicio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(DatosEquipo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -343,7 +509,7 @@ public class DatosInicio extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new DatosInicio().setVisible(true);
+                new DatosEquipo().setVisible(true);
             }
         });
     }
@@ -358,11 +524,17 @@ public class DatosInicio extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
+    private javax.swing.JSeparator jSeparator4;
+    private javax.swing.JSeparator jSeparator5;
     private javax.swing.JLabel logo;
-    private javax.swing.JTextField txtCategoria;
-    private javax.swing.JTextField txtNombreTorneo;
+    private javax.swing.JTextField txtDireccionJugador;
+    private javax.swing.JTextField txtNombreJugador;
+    private javax.swing.JTextField txtNumeroJugador;
+    private javax.swing.JTextField txtTelefonoJugador;
     // End of variables declaration//GEN-END:variables
 }
