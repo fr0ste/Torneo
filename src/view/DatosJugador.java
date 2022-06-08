@@ -1,16 +1,27 @@
 package view;
 
 import java.awt.Color;
+import model.IJugadorModel;
+import pojo.Torneo;
+import service.IJugadorService;
+import service.JugadorServiceImpl;
 
 
 public class DatosJugador extends javax.swing.JFrame {
 
-    int xMouse,yMouse;
-    
+    private int xMouse,yMouse;
+    private Torneo torneo;
+    IJugadorService judadorS = new JugadorServiceImpl();
     /**
      * Creates new form Principal
      */
+    public DatosJugador(Torneo torneo) {
+        this.torneo = torneo;
+        initComponents();
+    }
+    
     public DatosJugador() {
+        
         initComponents();
     }
 
@@ -381,8 +392,12 @@ public class DatosJugador extends javax.swing.JFrame {
     }//GEN-LAST:event_txtDireccionJugadorMousePressed
 
     private void btnContinuarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnContinuarActionPerformed
+        
+        
+        torneo.getEquipos().get("1").setJugador(judadorS.crearJugador("1", txtNombreJugador.getText(),2 , txtDireccionJugador.getText(), txtTelefonoJugador.getText()));
+        
         javax.swing.JOptionPane.showMessageDialog(this, "numero");
-        new DatosGeneral().setVisible(true);
+        new DatosGeneral(torneo);
         this.hide();
     }//GEN-LAST:event_btnContinuarActionPerformed
 

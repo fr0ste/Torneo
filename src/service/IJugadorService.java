@@ -18,7 +18,7 @@ public interface IJugadorService {
 
 	public void crearJugador(Hashtable<String, Jugador> lista, Jugador jugador);
 
-	public Jugador crearJugador(String id);
+	public Jugador crearJugador(String id, String nombre, int edad, String direccion, String telefono);
 
 	public void eliminarJugador(Hashtable<String, Jugador> lista, String idJugador);
 

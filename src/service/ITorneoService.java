@@ -14,20 +14,19 @@ import java.util.Hashtable;
 
 import pojo.Equipo;
 import pojo.Grafica;
+import pojo.Jugador;
 import pojo.Torneo;
 
 public interface ITorneoService {
 
-	public Torneo crearTorneo();
+	public Torneo crearTorneo(String nombreTorneo, String categoria);
 
-	public void guardarTorneo(Hashtable<String, Equipo> lista, Torneo torneo);
+	public void guardarEquipo(Hashtable<String, Equipo> lista, Equipo equipo);
 
-	public void eliminarTorneo(Hashtable<String, Equipo> lista, String idTorneo);
+	public void eliminarEquipo(Hashtable<String, Equipo> lista, String idEquipo);
 
-	public void actualizarTorneo(Hashtable<String, Equipo> lista, Torneo torneo);
+	public void actualizarEquipo(Hashtable<String, Equipo> lista, Equipo equipo);
 
-	public void agregarEquipo(Torneo torneo);
-
-	public void Grafica(Torneo torneo);
+	public Jugador obtenerUnEquipo(Hashtable<String, Equipo> lista, String idEquipo);
 
 }

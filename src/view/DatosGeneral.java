@@ -6,6 +6,7 @@
 package view;
 
 import java.awt.Color;
+import pojo.Torneo;
 
 /**
  *
@@ -13,11 +14,26 @@ import java.awt.Color;
  */
 public class DatosGeneral extends javax.swing.JFrame {
     
-    int xMouse, yMouse;
+    private int xMouse, yMouse;
+    private Torneo torneo;
     /**
      * Creates new form Principal
      */
+    public DatosGeneral(Torneo torneo) {
+        
+        this.torneo = torneo;
+        initComponents();
+        
+        
+        txtNombreTorneo1.setText(torneo.getNombreTorneo());
+        txtCategoria1.setText(torneo.getCategoria());
+        
+        this.show();
+        
+    }
+    
     public DatosGeneral() {
+        
         initComponents();
     }
 
@@ -64,8 +80,6 @@ public class DatosGeneral extends javax.swing.JFrame {
         background4 = new javax.swing.JPanel();
         jPanel7 = new javax.swing.JPanel();
         background5 = new javax.swing.JPanel();
-        jPanel13 = new javax.swing.JPanel();
-        jPanel14 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -367,6 +381,7 @@ public class DatosGeneral extends javax.swing.JFrame {
         jLabel12.setForeground(new java.awt.Color(0, 0, 0));
         jLabel12.setText("NOMBRE");
 
+        txtNombreTorneo1.setEditable(false);
         txtNombreTorneo1.setBackground(new java.awt.Color(255, 255, 255));
         txtNombreTorneo1.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         txtNombreTorneo1.setForeground(new java.awt.Color(153, 153, 153));
@@ -392,6 +407,7 @@ public class DatosGeneral extends javax.swing.JFrame {
         jLabel13.setForeground(new java.awt.Color(0, 0, 0));
         jLabel13.setText("CATEGORIA");
 
+        txtCategoria1.setEditable(false);
         txtCategoria1.setBackground(new java.awt.Color(255, 255, 255));
         txtCategoria1.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         txtCategoria1.setForeground(new java.awt.Color(153, 153, 153));
@@ -563,35 +579,7 @@ public class DatosGeneral extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("tab5", jPanel7);
 
-        jPanel13.setBackground(new java.awt.Color(255, 255, 255));
-
-        javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
-        jPanel13.setLayout(jPanel13Layout);
-        jPanel13Layout.setHorizontalGroup(
-            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 670, Short.MAX_VALUE)
-        );
-        jPanel13Layout.setVerticalGroup(
-            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 577, Short.MAX_VALUE)
-        );
-
-        jTabbedPane1.addTab("tab6", jPanel13);
-
-        javax.swing.GroupLayout jPanel14Layout = new javax.swing.GroupLayout(jPanel14);
-        jPanel14.setLayout(jPanel14Layout);
-        jPanel14Layout.setHorizontalGroup(
-            jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 670, Short.MAX_VALUE)
-        );
-        jPanel14Layout.setVerticalGroup(
-            jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 577, Short.MAX_VALUE)
-        );
-
-        jTabbedPane1.addTab("tab7", jPanel14);
-
-        background.add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 30, 670, 610));
+        background.add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 30, 670, 610));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -636,30 +624,6 @@ public class DatosGeneral extends javax.swing.JFrame {
          xMouse = evt.getX();
         yMouse = evt.getY();
     }//GEN-LAST:event_jPanel1MousePressed
-
-    private void jLabel11MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel11MouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jLabel11MouseClicked
-
-    private void txtNombreTorneo1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtNombreTorneo1MouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtNombreTorneo1MouseClicked
-
-    private void txtNombreTorneo1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtNombreTorneo1MousePressed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtNombreTorneo1MousePressed
-
-    private void txtNombreTorneo1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombreTorneo1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtNombreTorneo1ActionPerformed
-
-    private void txtCategoria1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtCategoria1MousePressed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtCategoria1MousePressed
-
-    private void txtCategoria1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCategoria1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtCategoria1ActionPerformed
 
     private void btnExitMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnExitMouseEntered
         
@@ -710,8 +674,32 @@ public class DatosGeneral extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel5MouseExited
 
     private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
-        // TODO add your handling code here:
+        jTabbedPane1.setSelectedIndex(0);
     }//GEN-LAST:event_jLabel1MouseClicked
+
+    private void txtCategoria1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCategoria1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtCategoria1ActionPerformed
+
+    private void txtCategoria1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtCategoria1MousePressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtCategoria1MousePressed
+
+    private void txtNombreTorneo1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombreTorneo1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNombreTorneo1ActionPerformed
+
+    private void txtNombreTorneo1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtNombreTorneo1MousePressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNombreTorneo1MousePressed
+
+    private void txtNombreTorneo1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtNombreTorneo1MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNombreTorneo1MouseClicked
+
+    private void jLabel11MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel11MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jLabel11MouseClicked
 
     /**
      * @param args the command line arguments
@@ -778,8 +766,6 @@ public class DatosGeneral extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel13;
-    private javax.swing.JPanel jPanel14;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;

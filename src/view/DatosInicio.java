@@ -1,6 +1,7 @@
 package view;
 
 import java.awt.Color;
+import service.TorneoServiceImpl;
 
 
 public class DatosInicio extends javax.swing.JFrame {
@@ -297,8 +298,11 @@ public class DatosInicio extends javax.swing.JFrame {
     }//GEN-LAST:event_txtCategoriaMousePressed
 
     private void btnContinuarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnContinuarActionPerformed
-        javax.swing.JOptionPane.showMessageDialog(this, "numero");
-        new DatosEquipo().setVisible(true);
+
+                     
+        
+        javax.swing.JOptionPane.showMessageDialog(this, txtCategoria.getText() + txtNombreTorneo.getText());
+        new DatosEquipo(new TorneoServiceImpl().crearTorneo(txtNombreTorneo.getText(), txtCategoria.getText())).setVisible(true);
         this.hide();
     }//GEN-LAST:event_btnContinuarActionPerformed
 
