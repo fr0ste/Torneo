@@ -63,7 +63,7 @@ public class DatosInicio extends javax.swing.JFrame {
         jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 51, 51));
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel5.setText("X");
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/remove (2).png"))); // NOI18N
         jLabel5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jLabel5.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -75,23 +75,24 @@ public class DatosInicio extends javax.swing.JFrame {
         header.setLayout(headerLayout);
         headerLayout.setHorizontalGroup(
             headerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(headerLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(868, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, headerLayout.createSequentialGroup()
+                .addGap(0, 860, Short.MAX_VALUE)
+                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         headerLayout.setVerticalGroup(
             headerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
+            .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        background.add(header, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 0, 930, 30));
+        background.add(header, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 0, 930, 40));
 
         jPanel2.setBackground(new java.awt.Color(48, 76, 134));
 
         logo.setBackground(new java.awt.Color(0, 204, 153));
+        logo.setFont(new java.awt.Font("Roboto Black", 0, 18)); // NOI18N
         logo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Logo.png"))); // NOI18N
+        logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/iLogo.png"))); // NOI18N
+        logo.setText("Torneos");
 
         btnDatosTorneo.setBackground(new java.awt.Color(48, 76, 134));
 
@@ -116,7 +117,7 @@ public class DatosInicio extends javax.swing.JFrame {
         btnDatosTorneoLayout.setHorizontalGroup(
             btnDatosTorneoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, btnDatosTorneoLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
+                .addGap(0, 16, Short.MAX_VALUE)
                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         btnDatosTorneoLayout.setVerticalGroup(
@@ -133,9 +134,8 @@ public class DatosInicio extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(btnDatosTorneo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(11, Short.MAX_VALUE)
-                .addComponent(logo)
-                .addContainerGap())
+                .addContainerGap()
+                .addComponent(logo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -148,13 +148,13 @@ public class DatosInicio extends javax.swing.JFrame {
 
         background.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 30, 160, 570));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Logo.png"))); // NOI18N
-        background.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 300, -1, -1));
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/teamLogo.png"))); // NOI18N
+        background.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 160, 350, 310));
 
         jLabel2.setFont(new java.awt.Font("Roboto Black", 0, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("CATEGORIA");
-        background.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 350, -1, -1));
+        background.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 360, -1, -1));
 
         txtCategoria.setBackground(new java.awt.Color(255, 255, 255));
         txtCategoria.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
@@ -171,12 +171,12 @@ public class DatosInicio extends javax.swing.JFrame {
                 txtCategoriaActionPerformed(evt);
             }
         });
-        background.add(txtCategoria, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 390, 350, 30));
+        background.add(txtCategoria, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 400, 350, 30));
 
         jLabel4.setFont(new java.awt.Font("Roboto Black", 0, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setText("NOMBRE");
-        background.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 170, -1, -1));
+        background.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 180, -1, -1));
 
         txtNombreTorneo.setBackground(new java.awt.Color(255, 255, 255));
         txtNombreTorneo.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
@@ -196,14 +196,14 @@ public class DatosInicio extends javax.swing.JFrame {
                 txtNombreTorneoActionPerformed(evt);
             }
         });
-        background.add(txtNombreTorneo, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 210, 350, 30));
+        background.add(txtNombreTorneo, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 220, 350, 30));
 
         jSeparator2.setForeground(new java.awt.Color(153, 153, 153));
-        background.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 420, 350, 10));
+        background.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 430, 350, 10));
 
         jSeparator3.setForeground(new java.awt.Color(153, 153, 153));
         jSeparator3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        background.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 240, 350, 10));
+        background.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 250, 350, 10));
 
         btnContinuar.setBackground(new java.awt.Color(110, 120, 143));
         btnContinuar.setForeground(new java.awt.Color(0, 0, 0));
@@ -214,13 +214,13 @@ public class DatosInicio extends javax.swing.JFrame {
                 btnContinuarActionPerformed(evt);
             }
         });
-        background.add(btnContinuar, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 500, -1, 30));
+        background.add(btnContinuar, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 510, -1, 30));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(background, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(background, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

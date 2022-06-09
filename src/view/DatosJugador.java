@@ -51,7 +51,6 @@ public class DatosJugador extends javax.swing.JFrame {
         logo = new javax.swing.JLabel();
         btnDatosTorneo = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         txtDireccionJugador = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
@@ -65,6 +64,7 @@ public class DatosJugador extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         txtNumeroJugador = new javax.swing.JTextField();
         jSeparator5 = new javax.swing.JSeparator();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocationByPlatform(true);
@@ -89,7 +89,7 @@ public class DatosJugador extends javax.swing.JFrame {
         jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 51, 51));
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel5.setText("X");
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/remove (2).png"))); // NOI18N
         jLabel5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jLabel5.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -101,23 +101,24 @@ public class DatosJugador extends javax.swing.JFrame {
         header.setLayout(headerLayout);
         headerLayout.setHorizontalGroup(
             headerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(headerLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(868, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, headerLayout.createSequentialGroup()
+                .addGap(0, 874, Short.MAX_VALUE)
+                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         headerLayout.setVerticalGroup(
             headerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
+            .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        background.add(header, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 0, 930, 30));
+        background.add(header, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 0, 930, 40));
 
         jPanel2.setBackground(new java.awt.Color(48, 76, 134));
 
         logo.setBackground(new java.awt.Color(0, 204, 153));
+        logo.setFont(new java.awt.Font("Roboto Black", 0, 18)); // NOI18N
         logo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Logo.png"))); // NOI18N
+        logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/iLogo.png"))); // NOI18N
+        logo.setText("Torneos");
 
         btnDatosTorneo.setBackground(new java.awt.Color(48, 76, 134));
 
@@ -142,7 +143,7 @@ public class DatosJugador extends javax.swing.JFrame {
         btnDatosTorneoLayout.setHorizontalGroup(
             btnDatosTorneoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, btnDatosTorneoLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
+                .addGap(0, 16, Short.MAX_VALUE)
                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         btnDatosTorneoLayout.setVerticalGroup(
@@ -158,10 +159,9 @@ public class DatosJugador extends javax.swing.JFrame {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(btnDatosTorneo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(11, Short.MAX_VALUE)
-                .addComponent(logo)
-                .addContainerGap())
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(logo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -174,13 +174,10 @@ public class DatosJugador extends javax.swing.JFrame {
 
         background.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 30, 160, 570));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Logo.png"))); // NOI18N
-        background.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 300, -1, -1));
-
         jLabel2.setFont(new java.awt.Font("Roboto Black", 0, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("DIRECCIÓN");
-        background.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 190, -1, -1));
+        background.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 220, -1, -1));
 
         txtDireccionJugador.setBackground(new java.awt.Color(255, 255, 255));
         txtDireccionJugador.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
@@ -197,12 +194,12 @@ public class DatosJugador extends javax.swing.JFrame {
                 txtDireccionJugadorActionPerformed(evt);
             }
         });
-        background.add(txtDireccionJugador, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 220, 350, 30));
+        background.add(txtDireccionJugador, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 250, 350, 30));
 
         jLabel4.setFont(new java.awt.Font("Roboto Black", 0, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setText("NOMBRE");
-        background.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 110, -1, -1));
+        background.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 140, -1, -1));
 
         txtNombreJugador.setBackground(new java.awt.Color(255, 255, 255));
         txtNombreJugador.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
@@ -222,14 +219,14 @@ public class DatosJugador extends javax.swing.JFrame {
                 txtNombreJugadorActionPerformed(evt);
             }
         });
-        background.add(txtNombreJugador, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 140, 350, 30));
+        background.add(txtNombreJugador, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 170, 350, 30));
 
         jSeparator2.setForeground(new java.awt.Color(153, 153, 153));
-        background.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 250, 350, 10));
+        background.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 280, 350, 10));
 
         jSeparator3.setForeground(new java.awt.Color(153, 153, 153));
         jSeparator3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        background.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 170, 350, 10));
+        background.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 200, 350, 10));
 
         btnContinuar.setBackground(new java.awt.Color(110, 120, 143));
         btnContinuar.setForeground(new java.awt.Color(0, 0, 0));
@@ -240,12 +237,12 @@ public class DatosJugador extends javax.swing.JFrame {
                 btnContinuarActionPerformed(evt);
             }
         });
-        background.add(btnContinuar, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 500, -1, 30));
+        background.add(btnContinuar, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 510, -1, 30));
 
         jLabel6.setFont(new java.awt.Font("Roboto Black", 0, 18)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(0, 0, 0));
         jLabel6.setText("TELÉFONO");
-        background.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 270, -1, -1));
+        background.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 300, -1, -1));
 
         txtTelefonoJugador.setBackground(new java.awt.Color(255, 255, 255));
         txtTelefonoJugador.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
@@ -262,15 +259,15 @@ public class DatosJugador extends javax.swing.JFrame {
                 txtTelefonoJugadorActionPerformed(evt);
             }
         });
-        background.add(txtTelefonoJugador, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 300, 350, 30));
+        background.add(txtTelefonoJugador, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 330, 350, 30));
 
         jSeparator4.setForeground(new java.awt.Color(153, 153, 153));
-        background.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 330, 350, 10));
+        background.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 360, 350, 10));
 
         jLabel7.setFont(new java.awt.Font("Roboto Black", 0, 18)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(0, 0, 0));
         jLabel7.setText("NUMERO DE JUGADOR");
-        background.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 350, -1, -1));
+        background.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 380, -1, -1));
 
         txtNumeroJugador.setBackground(new java.awt.Color(255, 255, 255));
         txtNumeroJugador.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
@@ -287,10 +284,13 @@ public class DatosJugador extends javax.swing.JFrame {
                 txtNumeroJugadorActionPerformed(evt);
             }
         });
-        background.add(txtNumeroJugador, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 380, 350, 30));
+        background.add(txtNumeroJugador, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 410, 350, 30));
 
         jSeparator5.setForeground(new java.awt.Color(153, 153, 153));
-        background.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 410, 350, 10));
+        background.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 440, 350, 10));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/teamLogo.png"))); // NOI18N
+        background.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 160, 350, 310));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
