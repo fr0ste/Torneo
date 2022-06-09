@@ -11,6 +11,8 @@
 package service;
 
 import java.util.Hashtable;
+import javax.swing.table.DefaultTableModel;
+import pojo.Equipo;
 
 import pojo.Jugador;
 
@@ -27,6 +29,8 @@ public interface IJugadorService {
 	public Jugador obtenerUnJugador(Hashtable<String, Jugador> lista, String idJugador);
 
 	public Hashtable<String, Jugador> obtenerTodosJugador(Hashtable<String, Jugador> lista, Jugador jugador);
+        
+        public void mostrarJugadores(Hashtable<String, Equipo> lista, DefaultTableModel modelo);
 
 }
 

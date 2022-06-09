@@ -12,9 +12,11 @@ package service;
 
 import java.util.Hashtable;
 import java.util.Scanner;
+import javax.swing.table.DefaultTableModel;
 
 import model.IJugadorModel;
 import model.JugadorModelImpl;
+import pojo.Equipo;
 import pojo.Jugador;
 
 public class JugadorServiceImpl implements IJugadorService {
@@ -48,6 +50,11 @@ public class JugadorServiceImpl implements IJugadorService {
     @Override
     public Hashtable<String, Jugador> obtenerTodosJugador(Hashtable<String, Jugador> lista, Jugador jugador) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    @Override
+    public void mostrarJugadores(Hashtable<String, Equipo> lista, DefaultTableModel modelo) {
+        model.mostrarJugadores(lista, modelo);
     }
 
 	

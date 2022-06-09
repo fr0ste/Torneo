@@ -1,5 +1,6 @@
 package pojo;
 
+import java.util.ArrayList;
 import java.util.Hashtable;
 
 public class Torneo {
@@ -29,7 +30,8 @@ public class Torneo {
 
 	// getters && setters
 	public Hashtable<String, Equipo> getEquipos() {
-		return equipos;
+                            
+            return equipos;
 	}
 
 	public void setEquipos(Equipo equipo) {

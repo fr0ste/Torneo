@@ -1,5 +1,7 @@
 package model;
 
+import java.util.Hashtable;
+import javax.swing.table.DefaultTableModel;
 import pojo.Equipo;
 
 public interface IEquipoModel {
@@ -8,5 +10,12 @@ public interface IEquipoModel {
 	// public Jugador crearJugador();
 
 	public Equipo crearEquipo(String nombre, String id);
+        
+        public void eliminarAlumno(Hashtable<String, Equipo> lista, String id);
+        public void actualizarAlumno(Hashtable<String, Equipo> lista, Equipo equipo);
+        public void mostrarEquipos(Hashtable<String, Equipo> lista, DefaultTableModel modelo);
 
 }
+
+
+

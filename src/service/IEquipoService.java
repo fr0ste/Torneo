@@ -12,6 +12,7 @@ package service;
 
 import java.util.Hashtable;
 import java.util.List;
+import javax.swing.table.DefaultTableModel;
 
 import pojo.Equipo;
 import pojo.Jugador;
@@ -19,5 +20,9 @@ import pojo.Jugador;
 public interface IEquipoService {
 
 	public Equipo crearEquipo(String nombre, String id);
+         public void eliminarAlumno(Hashtable<String, Equipo> lista, String id);
+        public void actualizarAlumno(Hashtable<String, Equipo> lista, Equipo equipo);
+        public void mostrarEquipos(Hashtable<String, Equipo> lista, DefaultTableModel modelo);
+
 
 }

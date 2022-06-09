@@ -11,6 +11,8 @@
 package model;
 
 import java.util.Hashtable;
+import javax.swing.table.DefaultTableModel;
+import pojo.Equipo;
 
 import pojo.Jugador;
 
@@ -22,13 +24,10 @@ public interface IJugadorModel {
 	public void crearJugador(Hashtable<String, Jugador> lista, Jugador jugador);
 
 	public Jugador crearJugador(String id, String nombre, int edad, String direccion, String telefono);
+        
+        public void eliminarAlumno(Hashtable<String, Equipo> lista, String id);
+        public void actualizarAlumno(Hashtable<String, Equipo> lista, Equipo equipo);
+        public void mostrarJugadores(Hashtable<String, Equipo> lista, DefaultTableModel modelo);
 
-	public void eliminarJugador(Hashtable<String, Jugador> lista, String idJugador);
-
-	public void actualizarJugador(Hashtable<String, Jugador> lista, Jugador jugador);
-
-	public Jugador obtenerUnJugador(Hashtable<String, Jugador> lista, String idJugador);
-
-	public Hashtable<String, Jugador> obtenerTodosJugador(Hashtable<String, Jugador> lista, Jugador jugador);
-
+	
 }

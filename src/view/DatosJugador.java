@@ -11,18 +11,28 @@ public class DatosJugador extends javax.swing.JFrame {
 
     private int xMouse,yMouse;
     private Torneo torneo;
+    private String idJugador = "1";
+    private String idEquipo = "1";
     IJugadorService judadorS = new JugadorServiceImpl();
     /**
      * Creates new form Principal
      */
+    public DatosJugador() {
+        
+        initComponents();
+    }
+    
     public DatosJugador(Torneo torneo) {
         this.torneo = torneo;
         initComponents();
     }
     
-    public DatosJugador() {
+    public DatosJugador(Torneo torneo,String idJugador, String idEquipo) {
         
         initComponents();
+        this.torneo = torneo;
+        this.idJugador = idJugador;
+        this.idEquipo = idEquipo;
     }
 
     /**
@@ -393,8 +403,10 @@ public class DatosJugador extends javax.swing.JFrame {
 
     private void btnContinuarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnContinuarActionPerformed
         
+             
         
-        torneo.getEquipos().get("1").setJugador(judadorS.crearJugador("1", txtNombreJugador.getText(),2 , txtDireccionJugador.getText(), txtTelefonoJugador.getText()));
+        
+        torneo.getEquipos().get(idEquipo).setJugador(judadorS.crearJugador(idJugador, txtNombreJugador.getText(),2 , txtDireccionJugador.getText(), txtTelefonoJugador.getText()));
         
         javax.swing.JOptionPane.showMessageDialog(this, "numero");
         new DatosGeneral(torneo);

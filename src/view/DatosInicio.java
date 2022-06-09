@@ -302,7 +302,7 @@ public class DatosInicio extends javax.swing.JFrame {
                      
         
         javax.swing.JOptionPane.showMessageDialog(this, txtCategoria.getText() + txtNombreTorneo.getText());
-        new DatosEquipo(new TorneoServiceImpl().crearTorneo(txtNombreTorneo.getText(), txtCategoria.getText())).setVisible(true);
+        new DatosGeneral(new TorneoServiceImpl().crearTorneo(txtNombreTorneo.getText(), txtCategoria.getText())).setVisible(true);
         this.hide();
     }//GEN-LAST:event_btnContinuarActionPerformed
 

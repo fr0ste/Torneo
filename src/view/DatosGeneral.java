@@ -6,7 +6,17 @@
 package view;
 
 import java.awt.Color;
+import java.util.ArrayList;
+import java.util.List;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
+import pojo.Equipo;
+import pojo.Jugador;
 import pojo.Torneo;
+import service.EquipoServiceImpl;
+import service.IEquipoService;
+import service.IJugadorService;
+import service.JugadorServiceImpl;
 
 /**
  *
@@ -16,15 +26,22 @@ public class DatosGeneral extends javax.swing.JFrame {
     
     private int xMouse, yMouse;
     private Torneo torneo;
-    /**
-     * Creates new form Principal
-     */
+    private IEquipoService eService;
+    private DefaultTableModel modelTabla;
+    private IJugadorService jService;
+    private String idEquipo;
+    private String idJugador;
+    
+    
     public DatosGeneral(Torneo torneo) {
         
         this.torneo = torneo;
         initComponents();
         
         
+        modelTabla =(DefaultTableModel) tablaEquipos.getModel();
+        eService = new EquipoServiceImpl();
+        jService = new JugadorServiceImpl();
         txtNombreTorneo1.setText(torneo.getNombreTorneo());
         txtCategoria1.setText(torneo.getCategoria());
         
@@ -76,8 +93,16 @@ public class DatosGeneral extends javax.swing.JFrame {
         jLabel14 = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
         background3 = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tablaEquipos = new javax.swing.JTable();
+        jButton1 = new javax.swing.JButton();
         jPanel6 = new javax.swing.JPanel();
         background4 = new javax.swing.JPanel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        tablaJugadores = new javax.swing.JTable();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        tablaEquipos1 = new javax.swing.JTable();
+        jButton2 = new javax.swing.JButton();
         jPanel7 = new javax.swing.JPanel();
         background5 = new javax.swing.JPanel();
 
@@ -270,6 +295,9 @@ public class DatosGeneral extends javax.swing.JFrame {
         jLabel6.setText("Datos de jugadores");
         jLabel6.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jLabel6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel6MouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 jLabel6MouseEntered(evt);
             }
@@ -348,7 +376,7 @@ public class DatosGeneral extends javax.swing.JFrame {
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addContainerGap(153, Short.MAX_VALUE)
+                .addContainerGap(143, Short.MAX_VALUE)
                 .addComponent(jLabel15)
                 .addGap(124, 124, 124))
         );
@@ -444,7 +472,7 @@ public class DatosGeneral extends javax.swing.JFrame {
                             .addComponent(jLabel12)
                             .addComponent(txtNombreTorneo1, javax.swing.GroupLayout.PREFERRED_SIZE, 340, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(0, 242, Short.MAX_VALUE))
+                .addGap(0, 232, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, background6Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel14)
@@ -474,7 +502,9 @@ public class DatosGeneral extends javax.swing.JFrame {
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, 670, Short.MAX_VALUE)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 655, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 5, Short.MAX_VALUE))
             .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel4Layout.createSequentialGroup()
                     .addContainerGap()
@@ -496,23 +526,58 @@ public class DatosGeneral extends javax.swing.JFrame {
         jPanel5.setBackground(new java.awt.Color(255, 255, 255));
 
         background3.setBackground(new java.awt.Color(255, 255, 255));
+        background3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        javax.swing.GroupLayout background3Layout = new javax.swing.GroupLayout(background3);
-        background3.setLayout(background3Layout);
-        background3Layout.setHorizontalGroup(
-            background3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 670, Short.MAX_VALUE)
-        );
-        background3Layout.setVerticalGroup(
-            background3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 577, Short.MAX_VALUE)
-        );
+        tablaEquipos.setBackground(new java.awt.Color(65, 168, 224));
+        tablaEquipos.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null}
+            },
+            new String [] {
+                "id", "Nombre"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, true
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane1.setViewportView(tablaEquipos);
+        if (tablaEquipos.getColumnModel().getColumnCount() > 0) {
+            tablaEquipos.getColumnModel().getColumn(0).setResizable(false);
+            tablaEquipos.getColumnModel().getColumn(1).setResizable(false);
+        }
+
+        background3.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 187, 660, 390));
+
+        jButton1.setText("agregar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        background3.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(571, 20, -1, -1));
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(background3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addComponent(background3, javax.swing.GroupLayout.PREFERRED_SIZE, 660, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -524,17 +589,77 @@ public class DatosGeneral extends javax.swing.JFrame {
         jPanel6.setBackground(new java.awt.Color(255, 255, 255));
 
         background4.setBackground(new java.awt.Color(255, 255, 255));
+        background4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        javax.swing.GroupLayout background4Layout = new javax.swing.GroupLayout(background4);
-        background4.setLayout(background4Layout);
-        background4Layout.setHorizontalGroup(
-            background4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 670, Short.MAX_VALUE)
-        );
-        background4Layout.setVerticalGroup(
-            background4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 579, Short.MAX_VALUE)
-        );
+        tablaJugadores.setBackground(new java.awt.Color(65, 168, 224));
+        tablaJugadores.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
+            },
+            new String [] {
+                "id", "nombre", "direccion", "telefono", "numero", "equipo"
+            }
+        ));
+        tablaJugadores.setMinimumSize(new java.awt.Dimension(450, 80));
+        tablaJugadores.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tablaJugadoresMouseClicked(evt);
+            }
+        });
+        jScrollPane2.setViewportView(tablaJugadores);
+
+        background4.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 163, 660, 410));
+
+        tablaEquipos1.setBackground(new java.awt.Color(65, 168, 224));
+        tablaEquipos1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null}
+            },
+            new String [] {
+                "id", "Nombre"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, true
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        tablaEquipos1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tablaEquipos1MouseClicked(evt);
+            }
+        });
+        jScrollPane3.setViewportView(tablaEquipos1);
+        if (tablaEquipos1.getColumnModel().getColumnCount() > 0) {
+            tablaEquipos1.getColumnModel().getColumn(0).setResizable(false);
+            tablaEquipos1.getColumnModel().getColumn(1).setResizable(false);
+        }
+
+        background4.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, 660, 97));
+
+        jButton2.setText("agregar");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        background4.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 10, -1, -1));
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
@@ -559,7 +684,7 @@ public class DatosGeneral extends javax.swing.JFrame {
         background5.setLayout(background5Layout);
         background5Layout.setHorizontalGroup(
             background5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 670, Short.MAX_VALUE)
+            .addGap(0, 660, Short.MAX_VALUE)
         );
         background5Layout.setVerticalGroup(
             background5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -579,7 +704,7 @@ public class DatosGeneral extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("tab5", jPanel7);
 
-        background.add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 30, 670, 610));
+        background.add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 30, 660, 610));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -600,7 +725,12 @@ public class DatosGeneral extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel3MouseClicked
 
     private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
+        
+        eService.mostrarEquipos(torneo.getEquipos(), modelTabla);
+        
         jTabbedPane1.setSelectedIndex(2);
+        
+        
     }//GEN-LAST:event_jLabel4MouseClicked
 
     private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
@@ -701,6 +831,32 @@ public class DatosGeneral extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jLabel11MouseClicked
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jLabel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseClicked
+        modelTabla =(DefaultTableModel) tablaEquipos1.getModel();
+        eService.mostrarEquipos(torneo.getEquipos(), modelTabla);
+        
+        modelTabla =(DefaultTableModel) tablaJugadores.getModel();
+        jService.mostrarJugadores(torneo.getEquipos(), modelTabla);
+        
+        jTabbedPane1.setSelectedIndex(3);
+    }//GEN-LAST:event_jLabel6MouseClicked
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+            new DatosJugador(torneo,idEquipo,idJugador).setVisible(true);
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void tablaEquipos1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tablaEquipos1MouseClicked
+        idEquipo = tablaEquipos1.getValueAt(tablaEquipos1.getSelectedRow(), 0).toString();
+    }//GEN-LAST:event_tablaEquipos1MouseClicked
+
+    private void tablaJugadoresMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tablaJugadoresMouseClicked
+        idJugador = tablaJugadores.getValueAt(tablaJugadores.getSelectedRow(), 0).toString();
+    }//GEN-LAST:event_tablaJugadoresMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -755,6 +911,8 @@ public class DatosGeneral extends javax.swing.JFrame {
     private javax.swing.JLabel btnExit;
     private javax.swing.JPanel btnInicio;
     private javax.swing.JPanel btnTablaEncuentro;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
@@ -772,10 +930,16 @@ public class DatosGeneral extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JSeparator jSeparator4;
     private javax.swing.JSeparator jSeparator5;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JLabel logo;
+    private javax.swing.JTable tablaEquipos;
+    private javax.swing.JTable tablaEquipos1;
+    private javax.swing.JTable tablaJugadores;
     private javax.swing.JTextField txtCategoria1;
     private javax.swing.JTextField txtNombreTorneo1;
     // End of variables declaration//GEN-END:variables
