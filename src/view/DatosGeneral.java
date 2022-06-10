@@ -85,6 +85,7 @@ public class DatosGeneral extends javax.swing.JFrame {
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel3 = new javax.swing.JPanel();
         jLabel15 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         jLabel11 = new javax.swing.JLabel();
         background6 = new javax.swing.JPanel();
@@ -107,6 +108,7 @@ public class DatosGeneral extends javax.swing.JFrame {
         jScrollPane3 = new javax.swing.JScrollPane();
         tablaEquipos1 = new javax.swing.JTable();
         btnAgregarJugador = new javax.swing.JButton();
+        jLabel7 = new javax.swing.JLabel();
         jPanel7 = new javax.swing.JPanel();
         background5 = new javax.swing.JPanel();
         jScrollPane4 = new javax.swing.JScrollPane();
@@ -163,7 +165,7 @@ public class DatosGeneral extends javax.swing.JFrame {
             .addComponent(btnExit, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        background.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 820, 40));
+        background.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 820, -1));
 
         jPanel2.setBackground(new java.awt.Color(48, 76, 134));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -372,27 +374,17 @@ public class DatosGeneral extends javax.swing.JFrame {
         jTabbedPane1.setBackground(new java.awt.Color(255, 255, 255));
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel15.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
+        jLabel15.setFont(new java.awt.Font("Roboto Black", 1, 25)); // NOI18N
         jLabel15.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel15.setText("torneos Descripcion de la aplicacion");
+        jLabel15.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel15.setText("Gestione su torneo con la opciones de lado izquierdo");
+        jPanel3.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -10, 660, 110));
 
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addContainerGap(143, Short.MAX_VALUE)
-                .addComponent(jLabel15)
-                .addGap(124, 124, 124))
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(218, 218, 218)
-                .addComponent(jLabel15)
-                .addContainerGap(330, Short.MAX_VALUE))
-        );
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/playerLogo2.png"))); // NOI18N
+        jPanel3.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 660, 570));
 
         jTabbedPane1.addTab("tab1", jPanel3);
 
@@ -501,7 +493,7 @@ public class DatosGeneral extends javax.swing.JFrame {
                 .addComponent(txtCategoria1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
                 .addComponent(jSeparator5, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(67, Short.MAX_VALUE))
+                .addContainerGap(97, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
@@ -519,7 +511,7 @@ public class DatosGeneral extends javax.swing.JFrame {
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, 577, Short.MAX_VALUE)
+            .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, 607, Short.MAX_VALUE)
             .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel4Layout.createSequentialGroup()
                     .addContainerGap()
@@ -567,7 +559,7 @@ public class DatosGeneral extends javax.swing.JFrame {
             tablaEquipos.getColumnModel().getColumn(1).setResizable(false);
         }
 
-        background3.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 187, 660, 390));
+        background3.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 167, 660, 410));
 
         jButton1.setText("agregar");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -617,7 +609,7 @@ public class DatosGeneral extends javax.swing.JFrame {
         });
         jScrollPane2.setViewportView(tablaJugadores);
 
-        background4.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 163, 660, 410));
+        background4.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 210, 660, 360));
 
         tablaEquipos1.setBackground(new java.awt.Color(65, 168, 224));
         tablaEquipos1.setModel(new javax.swing.table.DefaultTableModel(
@@ -657,7 +649,7 @@ public class DatosGeneral extends javax.swing.JFrame {
             tablaEquipos1.getColumnModel().getColumn(1).setResizable(false);
         }
 
-        background4.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, 660, 97));
+        background4.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, 660, 140));
 
         btnAgregarJugador.setText("agregar");
         btnAgregarJugador.addActionListener(new java.awt.event.ActionListener() {
@@ -666,6 +658,12 @@ public class DatosGeneral extends javax.swing.JFrame {
             }
         });
         background4.add(btnAgregarJugador, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 10, -1, -1));
+
+        jLabel7.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel7.setText("Seleccione un equipo para poder agregar jugadores");
+        background4.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 660, -1));
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
@@ -698,7 +696,7 @@ public class DatosGeneral extends javax.swing.JFrame {
         );
         background5Layout.setVerticalGroup(
             background5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 577, Short.MAX_VALUE)
+            .addComponent(jScrollPane4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 607, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
@@ -714,7 +712,7 @@ public class DatosGeneral extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("tab5", jPanel7);
 
-        background.add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 30, 660, 610));
+        background.add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 0, 660, 640));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -946,10 +944,12 @@ public class DatosGeneral extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;

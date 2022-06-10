@@ -52,8 +52,9 @@ public class Principal extends javax.swing.JFrame {
 
         jButton1.setBackground(new java.awt.Color(255, 255, 255));
         jButton1.setFont(new java.awt.Font("Roboto Black", 1, 24)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(51, 51, 51));
+        jButton1.setForeground(new java.awt.Color(0, 0, 0));
         jButton1.setText("Crear torneo");
+        jButton1.setBorder(javax.swing.BorderFactory.createMatteBorder(5, 5, 5, 5, new java.awt.Color(0, 0, 0)));
         jButton1.setContentAreaFilled(false);
         jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -66,7 +67,7 @@ public class Principal extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        background.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 300, 240, -1));
+        background.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 310, 240, -1));
 
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/ball.jpg"))); // NOI18N
