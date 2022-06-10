@@ -2,6 +2,8 @@ package view;
 
 import java.awt.Color;
 import model.IJugadorModel;
+import pojo.Jugador;
+import pojo.Sound;
 import pojo.Torneo;
 import service.IJugadorService;
 import service.JugadorServiceImpl;
@@ -11,7 +13,6 @@ public class DatosJugador extends javax.swing.JFrame {
 
     private int xMouse,yMouse;
     private Torneo torneo;
-    private String idJugador = "1";
     private String idEquipo = "1";
     IJugadorService judadorS = new JugadorServiceImpl();
     /**
@@ -27,11 +28,10 @@ public class DatosJugador extends javax.swing.JFrame {
         initComponents();
     }
     
-    public DatosJugador(Torneo torneo,String idJugador, String idEquipo) {
+    public DatosJugador(Torneo torneo,String idEquipo) {
         
         initComponents();
         this.torneo = torneo;
-        this.idJugador = idJugador;
         this.idEquipo = idEquipo;
     }
 
@@ -402,15 +402,21 @@ public class DatosJugador extends javax.swing.JFrame {
     }//GEN-LAST:event_txtDireccionJugadorMousePressed
 
     private void btnContinuarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnContinuarActionPerformed
+        if( !txtNombreJugador.getText().equals("Ingrese el nombre del jugador") && !txtTelefonoJugador.getText().equals("Ingrese el teléfono del jugador") && !txtDireccionJugador.getText().equals("Ingrese la dirección del jugador") && !txtNumeroJugador.getText().equals("Ingrese el número con el que jugará") && !txtNumeroJugador.getText().isEmpty()){
+        Sound.sucessfull();
+        String idJugador = String.valueOf(torneo.getEquipos().get(idEquipo).getJugadores().size()+1);
+        Jugador jugador = judadorS.crearJugador(idJugador, txtNombreJugador.getText(),Integer.parseInt(txtNumeroJugador.getText()) , txtDireccionJugador.getText(), txtTelefonoJugador.getText());
         
-             
         
-        
-        torneo.getEquipos().get(idEquipo).setJugador(judadorS.crearJugador(idJugador, txtNombreJugador.getText(),2 , txtDireccionJugador.getText(), txtTelefonoJugador.getText()));
+        torneo.getEquipos().get(idEquipo).setJugador(jugador);
         
         javax.swing.JOptionPane.showMessageDialog(this, "numero");
-        new DatosGeneral(torneo);
+        new DatosGeneral(torneo).setVisible(true);
         this.hide();
+        } else{
+            javax.swing.JOptionPane.showMessageDialog(this, "rellene los campos correctamente");
+        }
+        
     }//GEN-LAST:event_btnContinuarActionPerformed
 
     private void jLabel3MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseEntered
@@ -491,71 +497,6 @@ public class DatosJugador extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtNumeroJugadorActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(DatosJugador.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(DatosJugador.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(DatosJugador.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(DatosJugador.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new DatosJugador().setVisible(true);
-            }
-        });
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel background;

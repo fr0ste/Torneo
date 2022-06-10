@@ -11,12 +11,15 @@ import java.util.List;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 import pojo.Equipo;
+import pojo.Grafica;
 import pojo.Jugador;
+import pojo.Sound;
 import pojo.Torneo;
 import service.EquipoServiceImpl;
 import service.IEquipoService;
 import service.IJugadorService;
 import service.JugadorServiceImpl;
+import service.TorneoServiceImpl;
 
 /**
  *
@@ -29,7 +32,7 @@ public class DatosGeneral extends javax.swing.JFrame {
     private IEquipoService eService;
     private DefaultTableModel modelTabla;
     private IJugadorService jService;
-    private String idEquipo;
+    private String idEquipo = "";
     private String idJugador;
     
     
@@ -44,8 +47,9 @@ public class DatosGeneral extends javax.swing.JFrame {
         jService = new JugadorServiceImpl();
         txtNombreTorneo1.setText(torneo.getNombreTorneo());
         txtCategoria1.setText(torneo.getCategoria());
+        btnAgregarJugador.setVisible(false);
         
-        this.show();
+        
         
     }
     
@@ -102,9 +106,11 @@ public class DatosGeneral extends javax.swing.JFrame {
         tablaJugadores = new javax.swing.JTable();
         jScrollPane3 = new javax.swing.JScrollPane();
         tablaEquipos1 = new javax.swing.JTable();
-        jButton2 = new javax.swing.JButton();
+        btnAgregarJugador = new javax.swing.JButton();
         jPanel7 = new javax.swing.JPanel();
         background5 = new javax.swing.JPanel();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        txtEncuentros = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -653,13 +659,13 @@ public class DatosGeneral extends javax.swing.JFrame {
 
         background4.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, 660, 97));
 
-        jButton2.setText("agregar");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        btnAgregarJugador.setText("agregar");
+        btnAgregarJugador.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                btnAgregarJugadorActionPerformed(evt);
             }
         });
-        background4.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 10, -1, -1));
+        background4.add(btnAgregarJugador, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 10, -1, -1));
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
@@ -680,15 +686,19 @@ public class DatosGeneral extends javax.swing.JFrame {
 
         background5.setBackground(new java.awt.Color(255, 255, 255));
 
+        txtEncuentros.setColumns(20);
+        txtEncuentros.setRows(5);
+        jScrollPane4.setViewportView(txtEncuentros);
+
         javax.swing.GroupLayout background5Layout = new javax.swing.GroupLayout(background5);
         background5.setLayout(background5Layout);
         background5Layout.setHorizontalGroup(
             background5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 660, Short.MAX_VALUE)
+            .addComponent(jScrollPane4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 660, Short.MAX_VALUE)
         );
         background5Layout.setVerticalGroup(
             background5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 577, Short.MAX_VALUE)
+            .addComponent(jScrollPane4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 577, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
@@ -734,6 +744,9 @@ public class DatosGeneral extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel4MouseClicked
 
     private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
+        
+        int a = torneo.getEquipos().size();
+        txtEncuentros.setText(Grafica.getGrafica(a));
         jTabbedPane1.setSelectedIndex(4);
     }//GEN-LAST:event_jLabel5MouseClicked
 
@@ -764,11 +777,14 @@ public class DatosGeneral extends javax.swing.JFrame {
     }//GEN-LAST:event_btnExitMouseDragged
 
     private void jLabel3MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseEntered
+        Sound.mousePass();
         btnDatosTorneo.setBackground(new Color(65,168,224));
     }//GEN-LAST:event_jLabel3MouseEntered
 
     private void jLabel1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseEntered
+        Sound.mousePass();
         btnInicio.setBackground(new Color(65,168,224));
+        
     }//GEN-LAST:event_jLabel1MouseEntered
 
     private void jLabel1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseExited
@@ -780,6 +796,7 @@ public class DatosGeneral extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel3MouseExited
 
     private void jLabel4MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseEntered
+        Sound.mousePass();
         btnDatosEquipo.setBackground(new Color(65,168,224));
     }//GEN-LAST:event_jLabel4MouseEntered
 
@@ -788,6 +805,7 @@ public class DatosGeneral extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel4MouseExited
 
     private void jLabel6MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseEntered
+        Sound.mousePass();
         btnDatosJugadores.setBackground(new Color(65,168,224));
     }//GEN-LAST:event_jLabel6MouseEntered
 
@@ -796,6 +814,7 @@ public class DatosGeneral extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel6MouseExited
 
     private void jLabel5MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseEntered
+        Sound.mousePass();
         btnTablaEncuentro.setBackground(new Color(65,168,224));
     }//GEN-LAST:event_jLabel5MouseEntered
 
@@ -832,7 +851,12 @@ public class DatosGeneral extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel11MouseClicked
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+       if(torneo.getEquipos().size()<TorneoServiceImpl.maxEquipos){
+       new DatosEquipo(torneo).setVisible(true);
+       this.hide();
+       }else{
+           javax.swing.JOptionPane.showMessageDialog(this, "numero máximo de equipos alcanzado");
+       }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jLabel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseClicked
@@ -845,12 +869,15 @@ public class DatosGeneral extends javax.swing.JFrame {
         jTabbedPane1.setSelectedIndex(3);
     }//GEN-LAST:event_jLabel6MouseClicked
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-            new DatosJugador(torneo,idEquipo,idJugador).setVisible(true);
-    }//GEN-LAST:event_jButton2ActionPerformed
+    private void btnAgregarJugadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarJugadorActionPerformed
+            new DatosJugador(torneo,idEquipo).setVisible(true);
+            this.hide();
+    }//GEN-LAST:event_btnAgregarJugadorActionPerformed
 
     private void tablaEquipos1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tablaEquipos1MouseClicked
         idEquipo = tablaEquipos1.getValueAt(tablaEquipos1.getSelectedRow(), 0).toString();
+        
+        if(!idEquipo.isEmpty())btnAgregarJugador.setVisible(true);
     }//GEN-LAST:event_tablaEquipos1MouseClicked
 
     private void tablaJugadoresMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tablaJugadoresMouseClicked
@@ -905,6 +932,7 @@ public class DatosGeneral extends javax.swing.JFrame {
     private javax.swing.JPanel background4;
     private javax.swing.JPanel background5;
     private javax.swing.JPanel background6;
+    private javax.swing.JButton btnAgregarJugador;
     private javax.swing.JPanel btnDatosEquipo;
     private javax.swing.JPanel btnDatosJugadores;
     private javax.swing.JPanel btnDatosTorneo;
@@ -912,7 +940,6 @@ public class DatosGeneral extends javax.swing.JFrame {
     private javax.swing.JPanel btnInicio;
     private javax.swing.JPanel btnTablaEncuentro;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
@@ -933,6 +960,7 @@ public class DatosGeneral extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JSeparator jSeparator4;
     private javax.swing.JSeparator jSeparator5;
     private javax.swing.JTabbedPane jTabbedPane1;
@@ -941,6 +969,7 @@ public class DatosGeneral extends javax.swing.JFrame {
     private javax.swing.JTable tablaEquipos1;
     private javax.swing.JTable tablaJugadores;
     private javax.swing.JTextField txtCategoria1;
+    private javax.swing.JTextArea txtEncuentros;
     private javax.swing.JTextField txtNombreTorneo1;
     // End of variables declaration//GEN-END:variables
 }

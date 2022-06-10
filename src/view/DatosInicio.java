@@ -1,12 +1,28 @@
 package view;
 
 import java.awt.Color;
+import java.io.File;
+import java.io.IOException;
+import java.net.URL;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
+import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.UnsupportedAudioFileException;
+
+import javazoom.jlgui.basicplayer.BasicPlayer;
+import javazoom.jlgui.basicplayer.BasicPlayerException;
+import pojo.Sound;
 import service.TorneoServiceImpl;
 
 
 public class DatosInicio extends javax.swing.JFrame {
 
-    int xMouse,yMouse;
+    private int xMouse,yMouse;
+    private BasicPlayer player = new BasicPlayer();
+    private boolean continuar = false;
     
     /**
      * Creates new form Principal
@@ -14,6 +30,7 @@ public class DatosInicio extends javax.swing.JFrame {
     public DatosInicio() {
         initComponents();
     }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -159,7 +176,7 @@ public class DatosInicio extends javax.swing.JFrame {
         txtCategoria.setBackground(new java.awt.Color(255, 255, 255));
         txtCategoria.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         txtCategoria.setForeground(new java.awt.Color(153, 153, 153));
-        txtCategoria.setText("Ingrese la categoria");
+        txtCategoria.setText("Ingrese la categoría");
         txtCategoria.setBorder(null);
         txtCategoria.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
@@ -270,7 +287,7 @@ public class DatosInicio extends javax.swing.JFrame {
         
         if (txtCategoria.getText().isEmpty()) {
             
-            txtCategoria.setText("Ingrese la categoria");
+            txtCategoria.setText("Ingrese la categoría");
             txtCategoria.setForeground(Color.gray);
             
         }
@@ -281,7 +298,7 @@ public class DatosInicio extends javax.swing.JFrame {
 
     private void txtCategoriaMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtCategoriaMousePressed
         
-        if (txtCategoria.getText().equals("Ingrese la categoria")) {
+        if (txtCategoria.getText().equals("Ingrese la categoría")) {
             
             txtCategoria.setText("");
             txtCategoria.setForeground(Color.black);
@@ -298,12 +315,21 @@ public class DatosInicio extends javax.swing.JFrame {
     }//GEN-LAST:event_txtCategoriaMousePressed
 
     private void btnContinuarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnContinuarActionPerformed
-
-                     
         
-        javax.swing.JOptionPane.showMessageDialog(this, txtCategoria.getText() + txtNombreTorneo.getText());
-        new DatosGeneral(new TorneoServiceImpl().crearTorneo(txtNombreTorneo.getText(), txtCategoria.getText())).setVisible(true);
-        this.hide();
+        if(!txtNombreTorneo.getText().equals("Ingrese el nombre del torneo") && !txtCategoria.getText().equals("Ingrese la categoría") && !txtCategoria.getText().isEmpty() && !txtNombreTorneo.getText().isEmpty()){
+           
+            continuar = true;
+        }else{
+            Sound.error();
+            javax.swing.JOptionPane.showMessageDialog(this, "Rellene los campos");
+        }
+                     
+        if(continuar){
+            Sound.sucessfull();
+            javax.swing.JOptionPane.showMessageDialog(this, txtNombreTorneo.getText() +"\n"+ txtCategoria.getText());
+            new DatosGeneral(new TorneoServiceImpl().crearTorneo(txtNombreTorneo.getText(), txtCategoria.getText())).setVisible(true);
+            this.hide();
+        }
     }//GEN-LAST:event_btnContinuarActionPerformed
 
     private void jLabel3MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseEntered

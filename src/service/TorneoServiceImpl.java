@@ -21,8 +21,7 @@ import pojo.Torneo;
 
 public class TorneoServiceImpl implements ITorneoService {
 
-	private final int maxEquipos = 5;
-	private final int minEquipos = 2;
+	public static final int maxEquipos = 5;
 	private ITorneoModel torneo = new TorneoModelImpl();
 	private IEquipoService EquipoService = new EquipoServiceImpl();
 

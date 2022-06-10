@@ -1,6 +1,7 @@
 package view;
 
 import java.awt.Color;
+import pojo.Sound;
 import pojo.Torneo;
 import service.EquipoServiceImpl;
 import service.IEquipoService;
@@ -11,7 +12,6 @@ public class DatosEquipo extends javax.swing.JFrame {
     private int xMouse,yMouse;
     private boolean continuar=false;
     private IEquipoService equipoS = new EquipoServiceImpl();
-    private int i=1;
     
     /**
      * Creates new form Principal
@@ -254,23 +254,20 @@ public class DatosEquipo extends javax.swing.JFrame {
     private void btnContinuarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnContinuarActionPerformed
         
         
-        if(i<=2){
-            torneo.setEquipos(equipoS.crearEquipo(txtNombreJugador.getText(), String.valueOf(i)));
-            txtNombreJugador.setText("");
-            i++;
-        }else{
-            
+        if(!txtNombreJugador.getText().equals("Ingrese el nombre del equipo") && !txtNombreJugador.getText().isEmpty()){
+            torneo.setEquipos(equipoS.crearEquipo(txtNombreJugador.getText(), String.valueOf(torneo.getEquipos().size()+1)));
             continuar = true;
+        }else{
+            Sound.error();
+            javax.swing.JOptionPane.showMessageDialog(this, "ingrese un nombre");
         }
-       
         
         
-        if(continuar){
-            
-            
-        javax.swing.JOptionPane.showMessageDialog(this, "numero");
-        new DatosJugador(torneo).setVisible(true);
-        this.hide();
+        if(continuar){  
+            Sound.sucessfull();
+            javax.swing.JOptionPane.showMessageDialog(this, "nombre ingresado: " + txtNombreJugador.getText());
+            new DatosGeneral(torneo).setVisible(true);
+            this.hide();
         }
     }//GEN-LAST:event_btnContinuarActionPerformed
 
