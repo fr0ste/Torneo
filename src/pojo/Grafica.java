@@ -13,9 +13,9 @@ package pojo;
 public final class Grafica {
 
 	private final static String linea = "----------------";
-	private final static String eL = "\t\t|";
+	private final static String eL = "\t|";
 	private final static String e2L = "\n" + eL + eL;
-	private final static String e = "\t\t";
+	private final static String e = "\t";
 
 	private final static String grafica[] = {
 			("1" + linea + "\n" + eL + "\n" + eL + "\n" + eL + linea + "\n" + eL + "\n" + eL + "\n2" + linea + "\n"),

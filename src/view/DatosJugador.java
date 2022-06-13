@@ -410,7 +410,7 @@ public class DatosJugador extends javax.swing.JFrame {
         
         torneo.getEquipos().get(idEquipo).setJugador(jugador);
         
-        javax.swing.JOptionPane.showMessageDialog(this, "numero");
+        javax.swing.JOptionPane.showMessageDialog(this, "datos guardados");
         new DatosGeneral(torneo).setVisible(true);
         this.hide();
         } else{

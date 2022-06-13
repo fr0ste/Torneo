@@ -734,6 +734,7 @@ public class DatosGeneral extends javax.swing.JFrame {
 
     private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
         
+        modelTabla =(DefaultTableModel) tablaEquipos.getModel();
         eService.mostrarEquipos(torneo.getEquipos(), modelTabla);
         
         jTabbedPane1.setSelectedIndex(2);
@@ -744,7 +745,7 @@ public class DatosGeneral extends javax.swing.JFrame {
     private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
         
         int a = torneo.getEquipos().size();
-        txtEncuentros.setText(Grafica.getGrafica(a));
+        if(a>=2) txtEncuentros.setText(Grafica.getGrafica(a-2));
         jTabbedPane1.setSelectedIndex(4);
     }//GEN-LAST:event_jLabel5MouseClicked
 
