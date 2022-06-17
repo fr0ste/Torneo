@@ -745,7 +745,7 @@ public class DatosGeneral extends javax.swing.JFrame {
     private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
         
         int a = torneo.getEquipos().size();
-        if(a>=2) txtEncuentros.setText(Grafica.getGrafica(a-2));
+        if(a>=2) txtEncuentros.setText(Grafica.getGrafica(a));
         jTabbedPane1.setSelectedIndex(4);
     }//GEN-LAST:event_jLabel5MouseClicked
 

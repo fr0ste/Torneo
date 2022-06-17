@@ -1,38 +1,58 @@
-/* Autor:Figueroa Mart�nez Joel Francisco
- * 
- * Fecha de creaci�n: 02/05/2022
- * Fecha de modificaci�n: 09/05/2022
- * 
- * Descripci�n: clase para las gr�ficas del torneo 
- * 
- * 
- */
-
 package pojo;
+/**
+*
+* @author ISC-Luis
+*/
+public class Grafica {
 
-public final class Grafica {
+    public static String getGrafica(int n) {
+        Grafica rr = new Grafica(0);
+        String buffer = null;
+        for (int i = 0; i < 3; i++) {
+            
+            
+            buffer += ("jornada " + (i+1));
+            rr.mostrar(); 
+            rr.combinar();
+        }  
+        return buffer;
+    }
 
-	private final static String linea = "----------------";
-	private final static String eL = "\t|";
-	private final static String e2L = "\n" + eL + eL;
-	private final static String e = "\t";
+    private String[] equipos= new String[4];
 
-	private final static String grafica[] = {
-			("1" + linea + "\n" + eL + "\n" + eL + "\n" + eL + linea + "\n" + eL + "\n" + eL + "\n2" + linea + "\n"),
-			("1" + linea + "\n" + eL + "\n" + eL + linea + e2L + e2L + "\n" + "2" + linea + eL + "\n" + e + eL + linea
-					+ "\n" + e + eL + "\n" + e + eL + "\n" + e + eL + "\n3" + linea + linea + "\n"),
-			("1" + linea + "\n" + eL + "\n" + eL + "\n" + eL + linea + e2L + e2L + "\n2" + linea + eL + "\n" + e + eL
-					+ "\n" + e + eL + linea + "\n" + "3" + linea + eL + e2L + e2L + "\n" + eL + linea + "\n" + eL + "\n"
-					+ eL + "\n4" + linea + "\n"),
-			("1" + linea + "\n" + eL + "\n" + eL + "\n" + eL + linea + e2L + e2L + "\n2" + linea + eL + "\n" + e + eL
-					+ "\n" + e + eL + linea + "\n" + "3" + linea + eL + eL + e2L + eL + e2L + eL + "\n" + eL + linea
-					+ eL + "\n" + eL + e + eL + linea + "\n" + eL + e + eL + "\n4" + linea + e + eL + "\n" + e + e + eL
-					+ "\n" + e + e + eL + "\n" + "5" + linea + linea + linea) };
+    public Grafica(int n) {
+        this.equipos[0]="A";
+        this.equipos[1]="B";
+        this.equipos[2]="C";
+        /*this.equipos[3]="D";
+        this.equipos[4]="E";
+        this.equipos[5]="F";
+        this.equipos[6]="G";
+        this.equipos[7]="H";
+        this.equipos[8]="I";
+        */
+       this.equipos[3]="fantasma";
+    }
 
-	public final static String getGrafica(int n) {
+    public void combinar(){            
+        String buffer=equipos[equipos.length-1];
+  
+        for (int i = equipos.length-1; i > 1; i--) {
+            equipos[i]=equipos[i-1];
+        }
+        equipos[1]=buffer;  
+    }
 
-		return grafica[n];
-
-	}
-
+    public void mostrar(){
+        for (int i = 0, j=equipos.length-1; i<j; i++, j--) {
+        	if(equipos[j].equals("fantasma") ) {
+        		System.out.println(equipos[i] + " descansa");
+        	}else if(equipos[i].equals("fantasma")){
+                System.out.println(equipos[i] + " descansa");
+                }else{
+            System.out.println(equipos[i]+" vs "+ equipos[j]);
+        	}
+        }
+        System.out.println("*************************************");
+    }
 }
