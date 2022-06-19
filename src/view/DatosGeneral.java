@@ -6,9 +6,14 @@
 package view;
 
 import java.awt.Color;
+import java.awt.Image;
+import java.awt.MenuComponent;
 import java.util.ArrayList;
 import java.util.List;
+import javax.swing.ImageIcon;
+import javax.swing.JFileChooser;
 import javax.swing.JTable;
+import javax.swing.filechooser.FileNameExtensionFilter;
 import javax.swing.table.DefaultTableModel;
 import pojo.Equipo;
 import pojo.Grafica;
@@ -132,11 +137,15 @@ public class DatosGeneral extends javax.swing.JFrame {
         jLabel18 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
         jPanel9 = new javax.swing.JPanel();
-        jLabel10 = new javax.swing.JLabel();
+        lblLogo = new javax.swing.JLabel();
         txtNombreEquipo = new javax.swing.JTextField();
         jSeparator6 = new javax.swing.JSeparator();
         btnContinuar1 = new javax.swing.JButton();
         jLabel16 = new javax.swing.JLabel();
+        jLabel20 = new javax.swing.JLabel();
+        txtLogo = new javax.swing.JTextField();
+        jSeparator9 = new javax.swing.JSeparator();
+        jLabel10 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -702,7 +711,7 @@ public class DatosGeneral extends javax.swing.JFrame {
         jPanel7.setBackground(new java.awt.Color(255, 255, 255));
 
         jPanel10.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel10.setLayout(new java.awt.GridLayout(0, 1, 0, 5));
+        jPanel10.setLayout(new java.awt.GridLayout(0, 3, 0, 2));
         jScrollPane4.setViewportView(jPanel10);
 
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
@@ -844,10 +853,10 @@ public class DatosGeneral extends javax.swing.JFrame {
         jPanel9.setBackground(new java.awt.Color(204, 204, 204));
         jPanel9.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel10.setFont(new java.awt.Font("Roboto Black", 0, 18)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel10.setText("NOMBRE");
-        jPanel9.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 220, -1, -1));
+        lblLogo.setFont(new java.awt.Font("Roboto Black", 0, 18)); // NOI18N
+        lblLogo.setForeground(new java.awt.Color(0, 0, 0));
+        lblLogo.setText("LOGO DEL EQUIPO");
+        jPanel9.add(lblLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 280, -1, -1));
 
         txtNombreEquipo.setBackground(new java.awt.Color(255, 255, 255));
         txtNombreEquipo.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
@@ -859,11 +868,11 @@ public class DatosGeneral extends javax.swing.JFrame {
                 txtNombreEquipoMousePressed(evt);
             }
         });
-        jPanel9.add(txtNombreEquipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 280, 280, 30));
+        jPanel9.add(txtNombreEquipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 210, 280, 30));
 
         jSeparator6.setForeground(new java.awt.Color(153, 153, 153));
         jSeparator6.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jPanel9.add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 310, 280, 10));
+        jPanel9.add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 240, 280, 10));
 
         btnContinuar1.setBackground(new java.awt.Color(110, 120, 143));
         btnContinuar1.setForeground(new java.awt.Color(0, 0, 0));
@@ -874,10 +883,35 @@ public class DatosGeneral extends javax.swing.JFrame {
                 btnContinuar1ActionPerformed(evt);
             }
         });
-        jPanel9.add(btnContinuar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 390, -1, 30));
+        jPanel9.add(btnContinuar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 450, -1, 30));
 
         jLabel16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/teamLogo.png"))); // NOI18N
         jPanel9.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 100, 350, -1));
+
+        jLabel20.setFont(new java.awt.Font("Roboto Black", 0, 18)); // NOI18N
+        jLabel20.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel20.setText("NOMBRE");
+        jPanel9.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 170, -1, -1));
+
+        txtLogo.setBackground(new java.awt.Color(255, 255, 255));
+        txtLogo.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        txtLogo.setForeground(new java.awt.Color(153, 153, 153));
+        txtLogo.setText("Click aqui para cargar su logo");
+        txtLogo.setBorder(null);
+        txtLogo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                txtLogoMouseClicked(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                txtLogoMousePressed(evt);
+            }
+        });
+        jPanel9.add(txtLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 320, 280, 30));
+
+        jSeparator9.setForeground(new java.awt.Color(153, 153, 153));
+        jSeparator9.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jPanel9.add(jSeparator9, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 350, 280, 10));
+        jPanel9.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 360, 70, 70));
 
         jTabbedPane1.addTab("tab7", jPanel9);
 
@@ -1022,6 +1056,7 @@ public class DatosGeneral extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
        if(torneo.getEquipos().size()<TorneoServiceImpl.maxEquipos){
        jTabbedPane1.setSelectedIndex(6);
+       jLabel10.removeAll();
        }else{
            javax.swing.JOptionPane.showMessageDialog(this, "numero máximo de equipos alcanzado");
        }
@@ -1067,8 +1102,8 @@ public class DatosGeneral extends javax.swing.JFrame {
 
     private void btnContinuar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnContinuar1ActionPerformed
             
-        if(!txtNombreEquipo.getText().equals("Ingrese el nombre del equipo") && !txtNombreEquipo.getText().isEmpty()){
-            torneo.setEquipos(equipoService.crearEquipo(txtNombreEquipo.getText(), String.valueOf(torneo.getEquipos().size()+1)));
+        if(!txtNombreEquipo.getText().equals("Ingrese el nombre del equipo") && !txtNombreEquipo.getText().isEmpty() && !txtLogo.getText().equals("Click aqui para cargar su logo")){
+            torneo.setEquipos(equipoService.crearEquipo(txtNombreEquipo.getText(), String.valueOf(torneo.getEquipos().size()+1), txtLogo.getText()));
             continuar = true;
         }else{
             Sound.error();
@@ -1078,8 +1113,13 @@ public class DatosGeneral extends javax.swing.JFrame {
         if(continuar){
             Sound.sucessfull();
             
+            //restablece los valores por defecto de los campos
             txtNombreEquipo.setText("Ingrese el nombre del equipo");
             txtNombreEquipo.setForeground(Color.gray);
+            txtLogo.setText("Click aqui para cargar su logo");
+            txtNombreEquipo.setForeground(Color.gray);
+            jLabel10.setIcon(null);
+            jLabel10.updateUI();
             jTabbedPane1.setSelectedIndex(2);
             equipoService.mostrarEquipos(torneo.getEquipos(), modelTabla);
         }
@@ -1259,6 +1299,36 @@ public class DatosGeneral extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtNombreJugadorActionPerformed
 
+    private void txtLogoMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtLogoMousePressed
+        JFileChooser selectImage = new JFileChooser();
+       String ruta;
+       FileNameExtensionFilter filtroBusqueda = new FileNameExtensionFilter("JPG, PNG & GIG", "jpg", "png", "gif" );
+       selectImage.setFileFilter(filtroBusqueda);
+       
+       int opcionSeleccionada = selectImage.showOpenDialog(this);
+       
+       if(opcionSeleccionada == JFileChooser.APPROVE_OPTION){
+           
+           ruta = selectImage.getSelectedFile().getPath();
+           txtLogo.setText(ruta);
+           Image imagenSeleccionada = new ImageIcon(ruta).getImage();
+           
+           
+           ImageIcon iconoEquipo = new ImageIcon(
+           imagenSeleccionada.getScaledInstance(jLabel10.getWidth(),
+           jLabel10.getHeight(), Image.SCALE_SMOOTH));
+           
+           jLabel10.setIcon(iconoEquipo);
+           
+       }
+    }//GEN-LAST:event_txtLogoMousePressed
+
+    private void txtLogoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtLogoMouseClicked
+       
+       
+       
+    }//GEN-LAST:event_txtLogoMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -1328,6 +1398,7 @@ public class DatosGeneral extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -1356,13 +1427,16 @@ public class DatosGeneral extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator6;
     private javax.swing.JSeparator jSeparator7;
     private javax.swing.JSeparator jSeparator8;
+    private javax.swing.JSeparator jSeparator9;
     private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JLabel lblLogo;
     private javax.swing.JLabel logo;
     private javax.swing.JTable tablaEquipos;
     private javax.swing.JTable tablaEquipos1;
     private javax.swing.JTable tablaJugadores;
     private javax.swing.JTextField txtCategoria1;
     private javax.swing.JTextField txtDireccionJugador;
+    private javax.swing.JTextField txtLogo;
     private javax.swing.JTextField txtNombreEquipo;
     private javax.swing.JTextField txtNombreJugador;
     private javax.swing.JTextField txtNombreTorneo1;

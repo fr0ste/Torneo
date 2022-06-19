@@ -9,7 +9,7 @@ public interface IEquipoModel {
 	// registros
 	// public Jugador crearJugador();
 
-	public Equipo crearEquipo(String nombre, String id);
+	public Equipo crearEquipo(String nombre, String id,String logo);
         
         public void eliminarAlumno(Hashtable<String, Equipo> lista, String id);
         public void actualizarAlumno(Hashtable<String, Equipo> lista, Equipo equipo);

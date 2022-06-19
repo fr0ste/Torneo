@@ -26,8 +26,8 @@ public class EquipoServiceImpl implements IEquipoService {
 	IJugadorService jugadorService = new JugadorServiceImpl();
 
     @Override
-    public Equipo crearEquipo(String nombre, String id) {
-        return model.crearEquipo(nombre, id);
+    public Equipo crearEquipo(String nombre, String id,String logo) {
+        return model.crearEquipo(nombre, id,logo);
         
     }
 

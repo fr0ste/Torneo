@@ -19,7 +19,7 @@ import pojo.Jugador;
 
 public interface IEquipoService {
 
-	public Equipo crearEquipo(String nombre, String id);
+	public Equipo crearEquipo(String nombre, String id,String logo);
          public void eliminarAlumno(Hashtable<String, Equipo> lista, String id);
         public void actualizarAlumno(Hashtable<String, Equipo> lista, Equipo equipo);
         public void mostrarEquipos(Hashtable<String, Equipo> lista, DefaultTableModel modelo);

@@ -16,16 +16,18 @@ public class Equipo {
 
 	private String id;
 	private String nombre;
+        private String LogoRuta;
 	private Hashtable<String, Jugador> jugadores;
 
 	public Equipo() {
 		jugadores = new Hashtable<String, Jugador>();
 	}
 
-	public Equipo(String nombre, String id) {
+	public Equipo(String nombre, String id, String logo) {
 
 		this.setNombre(nombre);
 		this.setId(id);
+                this.LogoRuta = logo;
 		jugadores = new Hashtable<String, Jugador>();
 
 	}
@@ -33,6 +35,16 @@ public class Equipo {
 	public String getNombre() {
 		return nombre;
 	}
+
+    public void setLogoRuta(String LogoRuta) {
+        this.LogoRuta = LogoRuta;
+    }
+
+    public String getLogoRuta() {
+        return LogoRuta;
+    }
+    
+    
 
 	public void setNombre(String nombre) {
 		this.nombre = nombre;

@@ -18,9 +18,9 @@ import pojo.Equipo;
 public class EquipoModelImpl implements IEquipoModel {
 
 	@Override
-	public Equipo crearEquipo(String nombre, String id) {
+	public Equipo crearEquipo(String nombre, String id, String logo) {
 
-		return new Equipo(nombre, id);
+		return new Equipo(nombre, id, logo);
 	}
 
 

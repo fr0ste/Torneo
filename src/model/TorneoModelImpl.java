@@ -15,7 +15,7 @@ import java.util.Hashtable;
 import java.util.List;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JTextField;
+import javax.swing.JLabel;
 
 import pojo.Equipo;
 import pojo.Grafica;
@@ -32,7 +32,7 @@ public class TorneoModelImpl implements ITorneoModel {
         
         public void Grafica(Torneo torneo, JPanel label){
             label.removeAll();
-            List<JTextField> encuentros;
+            List<JLabel> encuentros;
             List<Equipo> equipos;
             equipos = new ArrayList<>(torneo.getEquipos().values());
             
