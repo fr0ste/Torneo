@@ -26,13 +26,14 @@ import service.IJugadorService;
 import service.ITorneoService;
 import service.JugadorServiceImpl;
 import service.TorneoServiceImpl;
+import service.validacionService;
 
 /**
  *
  * @author labdessw04
  */
 public class DatosGeneral extends javax.swing.JFrame {
-    
+
     private int xMouse, yMouse;
     private Torneo torneo;
     private ITorneoService torneoService;
@@ -42,28 +43,24 @@ public class DatosGeneral extends javax.swing.JFrame {
     private String idEquipo = "";
     private String idJugador;
     private boolean continuar;
-    
-    
+
     public DatosGeneral(Torneo torneo) {
-        
+
         this.torneo = torneo;
         initComponents();
-        
-        
-        modelTabla =(DefaultTableModel) tablaEquipos.getModel();
+
+        modelTabla = (DefaultTableModel) tablaEquipos.getModel();
         torneoService = new TorneoServiceImpl();
         equipoService = new EquipoServiceImpl();
         jugadorService = new JugadorServiceImpl();
         txtNombreTorneo1.setText(torneo.getNombreTorneo());
         txtCategoria1.setText(torneo.getCategoria());
         btnAgregarJugador.setVisible(false);
-        
-        
-        
+
     }
-    
+
     public DatosGeneral() {
-        
+
         initComponents();
     }
 
@@ -94,7 +91,7 @@ public class DatosGeneral extends javax.swing.JFrame {
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel3 = new javax.swing.JPanel();
         jLabel15 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        backgroundViewPrincipal = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         jLabel11 = new javax.swing.JLabel();
         background6 = new javax.swing.JPanel();
@@ -136,6 +133,7 @@ public class DatosGeneral extends javax.swing.JFrame {
         txtNombreJugador = new javax.swing.JTextField();
         jLabel18 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
+        jLabel22 = new javax.swing.JLabel();
         jPanel9 = new javax.swing.JPanel();
         lblLogo = new javax.swing.JLabel();
         txtNombreEquipo = new javax.swing.JTextField();
@@ -146,8 +144,12 @@ public class DatosGeneral extends javax.swing.JFrame {
         txtLogo = new javax.swing.JTextField();
         jSeparator9 = new javax.swing.JSeparator();
         jLabel10 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel21 = new javax.swing.JLabel();
+        jLabel23 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setLocationByPlatform(true);
         setUndecorated(true);
 
         background.setBackground(new java.awt.Color(255, 255, 255));
@@ -169,7 +171,7 @@ public class DatosGeneral extends javax.swing.JFrame {
         btnExit.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btnExit.setForeground(new java.awt.Color(255, 51, 51));
         btnExit.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        btnExit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/remove (2).png"))); // NOI18N
+        btnExit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/remove.png"))); // NOI18N
         btnExit.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnExit.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseDragged(java.awt.event.MouseEvent evt) {
@@ -198,12 +200,14 @@ public class DatosGeneral extends javax.swing.JFrame {
             .addComponent(btnExit, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        background.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 820, -1));
+        background.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 820, 40));
 
         jPanel2.setBackground(new java.awt.Color(48, 76, 134));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        logo.setBackground(new java.awt.Color(255, 255, 255));
         logo.setFont(new java.awt.Font("Roboto Black", 1, 18)); // NOI18N
+        logo.setForeground(new java.awt.Color(255, 255, 255));
         logo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/iLogo.png"))); // NOI18N
         logo.setText("Torneos");
@@ -402,7 +406,7 @@ public class DatosGeneral extends javax.swing.JFrame {
 
         jPanel2.add(btnTablaEncuentro, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 210, 160, 30));
 
-        background.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 160, 610));
+        background.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 170, 610));
 
         jTabbedPane1.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -415,15 +419,15 @@ public class DatosGeneral extends javax.swing.JFrame {
         jLabel15.setText("Gestione su torneo con la opciones de lado izquierdo");
         jPanel3.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -10, 660, 110));
 
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/playerLogo2.png"))); // NOI18N
-        jPanel3.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 660, 570));
+        backgroundViewPrincipal.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        backgroundViewPrincipal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/playerLogo2.png"))); // NOI18N
+        jPanel3.add(backgroundViewPrincipal, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 660, 610));
 
         jTabbedPane1.addTab("tab1", jPanel3);
 
         jPanel4.setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabel11.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel11.setBackground(new java.awt.Color(0, 0, 0));
         jLabel11.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(0, 0, 0));
         jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -485,7 +489,11 @@ public class DatosGeneral extends javax.swing.JFrame {
 
         jSeparator5.setForeground(new java.awt.Color(153, 153, 153));
 
-        jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Logo.png"))); // NOI18N
+        jLabel14.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel14.setFont(new java.awt.Font("Roboto Black", 0, 18)); // NOI18N
+        jLabel14.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/iLogo.png"))); // NOI18N
+        jLabel14.setText("TORNEOS");
 
         javax.swing.GroupLayout background6Layout = new javax.swing.GroupLayout(background6);
         background6.setLayout(background6Layout);
@@ -526,7 +534,7 @@ public class DatosGeneral extends javax.swing.JFrame {
                 .addComponent(txtCategoria1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
                 .addComponent(jSeparator5, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(97, Short.MAX_VALUE))
+                .addContainerGap(100, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
@@ -544,7 +552,7 @@ public class DatosGeneral extends javax.swing.JFrame {
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, 607, Short.MAX_VALUE)
+            .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, 610, Short.MAX_VALUE)
             .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel4Layout.createSequentialGroup()
                     .addContainerGap()
@@ -590,6 +598,8 @@ public class DatosGeneral extends javax.swing.JFrame {
 
         background3.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 167, 660, 440));
 
+        jButton1.setBackground(new java.awt.Color(65, 168, 224));
+        jButton1.setForeground(new java.awt.Color(0, 0, 0));
         jButton1.setText("agregar");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -679,6 +689,8 @@ public class DatosGeneral extends javax.swing.JFrame {
 
         background4.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, 660, 140));
 
+        btnAgregarJugador.setBackground(new java.awt.Color(65, 168, 224));
+        btnAgregarJugador.setForeground(new java.awt.Color(255, 255, 255));
         btnAgregarJugador.setText("agregar");
         btnAgregarJugador.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -718,11 +730,15 @@ public class DatosGeneral extends javax.swing.JFrame {
         jPanel7.setLayout(jPanel7Layout);
         jPanel7Layout.setHorizontalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 660, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 668, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 607, Short.MAX_VALUE)
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 601, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("tab5", jPanel7);
@@ -730,7 +746,7 @@ public class DatosGeneral extends javax.swing.JFrame {
         jPanel8.setBackground(new java.awt.Color(204, 204, 204));
         jPanel8.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        btnContinuar.setBackground(new java.awt.Color(110, 120, 143));
+        btnContinuar.setBackground(new java.awt.Color(65, 168, 224));
         btnContinuar.setForeground(new java.awt.Color(0, 0, 0));
         btnContinuar.setText("continuar");
         btnContinuar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -848,6 +864,14 @@ public class DatosGeneral extends javax.swing.JFrame {
         jLabel19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/teamLogo.png"))); // NOI18N
         jPanel8.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 100, 350, -1));
 
+        jLabel22.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/undo (2).png"))); // NOI18N
+        jLabel22.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel22MouseClicked(evt);
+            }
+        });
+        jPanel8.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 10, -1, -1));
+
         jTabbedPane1.addTab("tab6", jPanel8);
 
         jPanel9.setBackground(new java.awt.Color(204, 204, 204));
@@ -874,7 +898,7 @@ public class DatosGeneral extends javax.swing.JFrame {
         jSeparator6.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jPanel9.add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 240, 280, 10));
 
-        btnContinuar1.setBackground(new java.awt.Color(110, 120, 143));
+        btnContinuar1.setBackground(new java.awt.Color(65, 168, 224));
         btnContinuar1.setForeground(new java.awt.Color(0, 0, 0));
         btnContinuar1.setText("continuar");
         btnContinuar1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -883,8 +907,9 @@ public class DatosGeneral extends javax.swing.JFrame {
                 btnContinuar1ActionPerformed(evt);
             }
         });
-        jPanel9.add(btnContinuar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 450, -1, 30));
+        jPanel9.add(btnContinuar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 470, -1, 30));
 
+        jLabel16.setForeground(new java.awt.Color(0, 0, 0));
         jLabel16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/teamLogo.png"))); // NOI18N
         jPanel9.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 100, 350, -1));
 
@@ -906,12 +931,43 @@ public class DatosGeneral extends javax.swing.JFrame {
                 txtLogoMousePressed(evt);
             }
         });
+        txtLogo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtLogoActionPerformed(evt);
+            }
+        });
         jPanel9.add(txtLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 320, 280, 30));
 
         jSeparator9.setForeground(new java.awt.Color(153, 153, 153));
         jSeparator9.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jPanel9.add(jSeparator9, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 350, 280, 10));
-        jPanel9.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 360, 70, 70));
+        jPanel9.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 380, 70, 70));
+
+        jLabel2.setBackground(new java.awt.Color(51, 51, 51));
+        jLabel2.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setText("Ingrese los datos de su equipo");
+        jPanel9.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 660, -1));
+
+        jLabel21.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
+        jLabel21.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel21.setText("Click aqui para cargar una imagen generica.");
+        jLabel21.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel21.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel21MouseClicked(evt);
+            }
+        });
+        jPanel9.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 350, 290, 30));
+
+        jLabel23.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/undo (2).png"))); // NOI18N
+        jLabel23.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel23MouseClicked(evt);
+            }
+        });
+        jPanel9.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 10, -1, -1));
 
         jTabbedPane1.addTab("tab7", jPanel9);
 
@@ -936,19 +992,21 @@ public class DatosGeneral extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel3MouseClicked
 
     private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
-        
-        modelTabla =(DefaultTableModel) tablaEquipos.getModel();
+
+        modelTabla = (DefaultTableModel) tablaEquipos.getModel();
         equipoService.mostrarEquipos(torneo.getEquipos(), modelTabla);
-        
+
         jTabbedPane1.setSelectedIndex(2);
-        
-        
+
+
     }//GEN-LAST:event_jLabel4MouseClicked
 
     private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
-        
+
         int a = torneo.getEquipos().size();
-        if(a>=2) torneoService.Grafica(torneo, jPanel10);
+        if (a >= 2) {
+            torneoService.Grafica(torneo, jPanel10);
+        }
         jPanel10.updateUI();
         jTabbedPane1.setSelectedIndex(4);
     }//GEN-LAST:event_jLabel5MouseClicked
@@ -960,69 +1018,69 @@ public class DatosGeneral extends javax.swing.JFrame {
     }//GEN-LAST:event_btnExitMouseClicked
 
     private void jPanel1MouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel1MouseDragged
-            int x = evt.getXOnScreen();
+        int x = evt.getXOnScreen();
         int y = evt.getYOnScreen();
         this.setLocation(x - xMouse, y - yMouse);
     }//GEN-LAST:event_jPanel1MouseDragged
 
     private void jPanel1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel1MousePressed
 
-         xMouse = evt.getX();
+        xMouse = evt.getX();
         yMouse = evt.getY();
     }//GEN-LAST:event_jPanel1MousePressed
 
     private void btnExitMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnExitMouseEntered
-        
+
     }//GEN-LAST:event_btnExitMouseEntered
 
     private void btnExitMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnExitMouseDragged
-        
+
     }//GEN-LAST:event_btnExitMouseDragged
 
     private void jLabel3MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseEntered
         Sound.mousePass();
-        btnDatosTorneo.setBackground(new Color(65,168,224));
+        btnDatosTorneo.setBackground(new Color(65, 168, 224));
     }//GEN-LAST:event_jLabel3MouseEntered
 
     private void jLabel1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseEntered
         Sound.mousePass();
-        btnInicio.setBackground(new Color(65,168,224));
-        
+        btnInicio.setBackground(new Color(65, 168, 224));
+
     }//GEN-LAST:event_jLabel1MouseEntered
 
     private void jLabel1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseExited
-        btnInicio.setBackground(new Color(48,76,134));
+        btnInicio.setBackground(new Color(48, 76, 134));
     }//GEN-LAST:event_jLabel1MouseExited
 
     private void jLabel3MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseExited
-        btnDatosTorneo.setBackground(new Color(48,76,134));
+        btnDatosTorneo.setBackground(new Color(48, 76, 134));
     }//GEN-LAST:event_jLabel3MouseExited
 
     private void jLabel4MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseEntered
         Sound.mousePass();
-        btnDatosEquipo.setBackground(new Color(65,168,224));
+        btnDatosEquipo.setBackground(new Color(65, 168, 224));
     }//GEN-LAST:event_jLabel4MouseEntered
 
     private void jLabel4MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseExited
-        btnDatosEquipo.setBackground(new Color(48,76,134));
+        btnDatosEquipo.setBackground(new Color(48, 76, 134));
     }//GEN-LAST:event_jLabel4MouseExited
 
     private void jLabel6MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseEntered
         Sound.mousePass();
-        btnDatosJugadores.setBackground(new Color(65,168,224));
+        btnDatosJugadores.setBackground(new Color(65, 168, 224));
     }//GEN-LAST:event_jLabel6MouseEntered
 
     private void jLabel6MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseExited
-        btnDatosJugadores.setBackground(new Color(48,76,134));
+        btnDatosJugadores.setBackground(new Color(48, 76, 134));
     }//GEN-LAST:event_jLabel6MouseExited
 
     private void jLabel5MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseEntered
         Sound.mousePass();
-        btnTablaEncuentro.setBackground(new Color(65,168,224));
+        btnTablaEncuentro.setBackground(new Color(65, 168, 224));
     }//GEN-LAST:event_jLabel5MouseEntered
 
     private void jLabel5MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseExited
-        btnTablaEncuentro.setBackground(new Color(48,76,134));
+        btnTablaEncuentro.setBackground(new Color(48, 76, 134));
     }//GEN-LAST:event_jLabel5MouseExited
 
     private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
@@ -1054,38 +1112,38 @@ public class DatosGeneral extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel11MouseClicked
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-       if(torneo.getEquipos().size()<TorneoServiceImpl.maxEquipos){
-       jTabbedPane1.setSelectedIndex(6);
-       jLabel10.removeAll();
-       }else{
-           javax.swing.JOptionPane.showMessageDialog(this, "numero máximo de equipos alcanzado");
-       }
+        if (torneo.getEquipos().size() < TorneoServiceImpl.maxEquipos) {
+            jTabbedPane1.setSelectedIndex(6);
+            jLabel10.removeAll();
+        } else {
+            javax.swing.JOptionPane.showMessageDialog(this, "numero máximo de equipos alcanzado");
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jLabel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseClicked
-        modelTabla =(DefaultTableModel) tablaEquipos1.getModel();
+        modelTabla = (DefaultTableModel) tablaEquipos1.getModel();
         equipoService.mostrarEquipos(torneo.getEquipos(), modelTabla);
-        
-        modelTabla =(DefaultTableModel) tablaJugadores.getModel();
-        if(!idEquipo.isEmpty())
-        jugadorService.mostrarJugadores(torneo.getEquipos().get(idEquipo).getJugadores(), modelTabla, idEquipo);
-        
+
+        modelTabla = (DefaultTableModel) tablaJugadores.getModel();
+        if (!idEquipo.isEmpty()) {
+            jugadorService.mostrarJugadores(torneo.getEquipos().get(idEquipo).getJugadores(), modelTabla, idEquipo);
+        }
+
         jTabbedPane1.setSelectedIndex(3);
     }//GEN-LAST:event_jLabel6MouseClicked
 
     private void btnAgregarJugadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarJugadorActionPerformed
-            jTabbedPane1.setSelectedIndex(5);
+        jTabbedPane1.setSelectedIndex(5);
     }//GEN-LAST:event_btnAgregarJugadorActionPerformed
 
     private void tablaEquipos1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tablaEquipos1MouseClicked
         idEquipo = tablaEquipos1.getValueAt(tablaEquipos1.getSelectedRow(), 0).toString();
-        
-        
-        if(!idEquipo.isEmpty()){
+
+        if (!idEquipo.isEmpty()) {
             btnAgregarJugador.setVisible(true);
-            modelTabla =(DefaultTableModel) tablaJugadores.getModel();
-            jugadorService.mostrarJugadores(torneo.getEquipos().get(idEquipo).getJugadores(), modelTabla,idEquipo);
-        
+            modelTabla = (DefaultTableModel) tablaJugadores.getModel();
+            jugadorService.mostrarJugadores(torneo.getEquipos().get(idEquipo).getJugadores(), modelTabla, idEquipo);
+
         }
     }//GEN-LAST:event_tablaEquipos1MouseClicked
 
@@ -1101,18 +1159,19 @@ public class DatosGeneral extends javax.swing.JFrame {
     }//GEN-LAST:event_txtNombreEquipoMousePressed
 
     private void btnContinuar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnContinuar1ActionPerformed
-            
-        if(!txtNombreEquipo.getText().equals("Ingrese el nombre del equipo") && !txtNombreEquipo.getText().isEmpty() && !txtLogo.getText().equals("Click aqui para cargar su logo")){
-            torneo.setEquipos(equipoService.crearEquipo(txtNombreEquipo.getText(), String.valueOf(torneo.getEquipos().size()+1), txtLogo.getText()));
+        continuar = false;
+
+        if (!txtNombreEquipo.getText().equals("Ingrese el nombre del equipo") && !txtNombreEquipo.getText().isEmpty() && !txtLogo.getText().equals("Click aqui para cargar su logo")) {
+            torneo.setEquipos(equipoService.crearEquipo(txtNombreEquipo.getText(), String.valueOf(torneo.getEquipos().size() + 1), txtLogo.getText()));
             continuar = true;
-        }else{
+        } else {
             Sound.error();
             javax.swing.JOptionPane.showMessageDialog(this, "ingrese un nombre");
         }
 
-        if(continuar){
+        if (continuar) {
             Sound.sucessfull();
-            
+
             //restablece los valores por defecto de los campos
             txtNombreEquipo.setText("Ingrese el nombre del equipo");
             txtNombreEquipo.setForeground(Color.gray);
@@ -1126,28 +1185,26 @@ public class DatosGeneral extends javax.swing.JFrame {
     }//GEN-LAST:event_btnContinuar1ActionPerformed
 
     private void btnContinuarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnContinuarActionPerformed
-        if( !txtNombreJugador.getText().equals("Ingrese el nombre del jugador") && !txtTelefonoJugador.getText().equals("Ingrese el teléfono del jugador") && !txtDireccionJugador.getText().equals("Ingrese la dirección del jugador") && !txtNumeroJugador.getText().equals("Ingrese el número con el que jugará") && !txtNumeroJugador.getText().isEmpty()){
+        if (!txtNombreJugador.getText().equals("Ingrese el nombre del jugador") && !txtTelefonoJugador.getText().equals("Ingrese el teléfono del jugador") && !txtDireccionJugador.getText().equals("Ingrese la dirección del jugador") && !txtNumeroJugador.getText().equals("Ingrese el número con el que jugará") && !txtNumeroJugador.getText().isEmpty() && validacionService.isNumeric(txtNumeroJugador.getText()) && validacionService.isNumeric(txtTelefonoJugador.getText())) {
             Sound.sucessfull();
-            String idJugador = String.valueOf(torneo.getEquipos().get(idEquipo).getJugadores().size()+1);
-            Jugador jugador = jugadorService.crearJugador(idJugador, txtNombreJugador.getText(),Integer.parseInt(txtNumeroJugador.getText()) , txtDireccionJugador.getText(), txtTelefonoJugador.getText());
+            String idJugador = String.valueOf(torneo.getEquipos().get(idEquipo).getJugadores().size() + 1);
+            Jugador jugador = jugadorService.crearJugador(idJugador, txtNombreJugador.getText(), Integer.parseInt(txtNumeroJugador.getText()), txtDireccionJugador.getText(), txtTelefonoJugador.getText());
 
-            torneo.getEquipos().get(idEquipo).setJugador(jugador);            
+            torneo.getEquipos().get(idEquipo).setJugador(jugador);
             javax.swing.JOptionPane.showMessageDialog(this, "datos guardados");
             txtNumeroJugador.setText("Ingrese el número con el que jugará");
-            txtNombreJugador.setText("Ingrese el nombre del jugador");            
+            txtNombreJugador.setText("Ingrese el nombre del jugador");
             txtTelefonoJugador.setText("Ingrese el teléfono del jugador");
             txtDireccionJugador.setText("Ingrese la dirección del jugador");
-            
+
             txtNumeroJugador.setForeground(Color.gray);
-            txtNombreJugador.setForeground(Color.gray);            
+            txtNombreJugador.setForeground(Color.gray);
             txtTelefonoJugador.setForeground(Color.gray);
             txtDireccionJugador.setForeground(Color.gray);
 
-
-            
             jTabbedPane1.setSelectedIndex(3);
-            jugadorService.mostrarJugadores(torneo.getEquipos().get(idEquipo).getJugadores(), modelTabla,idEquipo);
-        } else{
+            jugadorService.mostrarJugadores(torneo.getEquipos().get(idEquipo).getJugadores(), modelTabla, idEquipo);
+        } else {
             javax.swing.JOptionPane.showMessageDialog(this, "rellene los campos correctamente");
         }
 
@@ -1163,7 +1220,7 @@ public class DatosGeneral extends javax.swing.JFrame {
 
         if (txtNombreJugador.getText().isEmpty()) {
 
-            txtNombreJugador.setText("Ingrese el nombre del jugador");            
+            txtNombreJugador.setText("Ingrese el nombre del jugador");
             txtTelefonoJugador.setText("Ingrese el teléfono del jugador");
             txtDireccionJugador.setText("Ingrese la dirección del jugador");
             txtNombreJugador.setForeground(Color.gray);
@@ -1301,33 +1358,71 @@ public class DatosGeneral extends javax.swing.JFrame {
 
     private void txtLogoMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtLogoMousePressed
         JFileChooser selectImage = new JFileChooser();
-       String ruta;
-       FileNameExtensionFilter filtroBusqueda = new FileNameExtensionFilter("JPG, PNG & GIG", "jpg", "png", "gif" );
-       selectImage.setFileFilter(filtroBusqueda);
-       
-       int opcionSeleccionada = selectImage.showOpenDialog(this);
-       
-       if(opcionSeleccionada == JFileChooser.APPROVE_OPTION){
-           
-           ruta = selectImage.getSelectedFile().getPath();
-           txtLogo.setText(ruta);
-           Image imagenSeleccionada = new ImageIcon(ruta).getImage();
-           
-           
-           ImageIcon iconoEquipo = new ImageIcon(
-           imagenSeleccionada.getScaledInstance(jLabel10.getWidth(),
-           jLabel10.getHeight(), Image.SCALE_SMOOTH));
-           
-           jLabel10.setIcon(iconoEquipo);
-           
-       }
+        String ruta;
+        FileNameExtensionFilter filtroBusqueda = new FileNameExtensionFilter("JPG, PNG & GIG", "jpg", "png", "gif");
+        selectImage.setFileFilter(filtroBusqueda);
+
+        int opcionSeleccionada = selectImage.showOpenDialog(this);
+
+        if (opcionSeleccionada == JFileChooser.APPROVE_OPTION) {
+
+            ruta = selectImage.getSelectedFile().getPath();
+            txtLogo.setText(ruta);
+            Image imagenSeleccionada = new ImageIcon(ruta).getImage();
+
+            ImageIcon iconoEquipo = new ImageIcon(
+                    imagenSeleccionada.getScaledInstance(jLabel10.getWidth(),
+                            jLabel10.getHeight(), Image.SCALE_SMOOTH));
+
+            jLabel10.setIcon(iconoEquipo);
+
+        }
     }//GEN-LAST:event_txtLogoMousePressed
 
     private void txtLogoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtLogoMouseClicked
-       
-       
-       
+
+
     }//GEN-LAST:event_txtLogoMouseClicked
+
+    private void txtLogoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtLogoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtLogoActionPerformed
+
+    private void jLabel21MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel21MouseClicked
+        String ruta = "..\\Torneo\\src\\images\\teamLogo.png";
+        txtLogo.setText(ruta);
+        Image imagenSeleccionada = new ImageIcon(ruta).getImage();
+
+        ImageIcon iconoEquipo = new ImageIcon(
+                imagenSeleccionada.getScaledInstance(jLabel10.getWidth(),
+                        jLabel10.getHeight(), Image.SCALE_SMOOTH));
+
+        jLabel10.setIcon(iconoEquipo);
+    }//GEN-LAST:event_jLabel21MouseClicked
+
+    private void jLabel22MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel22MouseClicked
+
+        jTabbedPane1.setSelectedIndex(3);
+        txtNumeroJugador.setText("Ingrese el número con el que jugará");
+        txtNombreJugador.setText("Ingrese el nombre del jugador");
+        txtTelefonoJugador.setText("Ingrese el teléfono del jugador");
+        txtDireccionJugador.setText("Ingrese la dirección del jugador");
+
+        txtNumeroJugador.setForeground(Color.gray);
+        txtNombreJugador.setForeground(Color.gray);
+        txtTelefonoJugador.setForeground(Color.gray);
+        txtDireccionJugador.setForeground(Color.gray);
+    }//GEN-LAST:event_jLabel22MouseClicked
+
+    private void jLabel23MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel23MouseClicked
+        jTabbedPane1.setSelectedIndex(2);
+        txtNombreEquipo.setText("Ingrese el nombre del equipo");
+            txtNombreEquipo.setForeground(Color.gray);
+            txtLogo.setText("Click aqui para cargar su logo");
+            txtNombreEquipo.setForeground(Color.gray);
+            jLabel10.setIcon(null);
+            jLabel10.updateUI();
+    }//GEN-LAST:event_jLabel23MouseClicked
 
     /**
      * @param args the command line arguments
@@ -1376,6 +1471,7 @@ public class DatosGeneral extends javax.swing.JFrame {
     private javax.swing.JPanel background3;
     private javax.swing.JPanel background4;
     private javax.swing.JPanel background6;
+    private javax.swing.JLabel backgroundViewPrincipal;
     private javax.swing.JButton btnAgregarJugador;
     private javax.swing.JButton btnContinuar;
     private javax.swing.JButton btnContinuar1;
@@ -1399,6 +1495,9 @@ public class DatosGeneral extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;

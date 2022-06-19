@@ -18,7 +18,7 @@ public class Sound {
     try {
          // Open an audio input stream.
          
-         AudioInputStream audioIn = AudioSystem.getAudioInputStream(new File("C:\\Users\\froste\\Documents\\NetBeansProjects\\Torneo\\src\\sounds\\mosePass.wav"));
+         AudioInputStream audioIn = AudioSystem.getAudioInputStream(new File("..\\Torneo\\src\\sounds\\mosePass.wav"));
          // Get a sound clip resource.
          Clip clip = AudioSystem.getClip();
          // Open audio clip and load samples from the audio input stream.
@@ -33,7 +33,7 @@ public class Sound {
     try {
          // Open an audio input stream.
          
-         AudioInputStream audioIn = AudioSystem.getAudioInputStream(new File("C:\\Users\\froste\\Documents\\NetBeansProjects\\Torneo\\src\\sounds\\mixkit-cool-interface-click-tone-2568.wav"));
+         AudioInputStream audioIn = AudioSystem.getAudioInputStream(new File("..\\Torneo\\src\\sounds\\mixkit-cool-interface-click-tone-2568.wav"));
          // Get a sound clip resource.
          Clip clip = AudioSystem.getClip();
          // Open audio clip and load samples from the audio input stream.
@@ -47,7 +47,7 @@ public class Sound {
     try {
          // Open an audio input stream.
          
-         AudioInputStream audioIn = AudioSystem.getAudioInputStream(new File("C:\\Users\\froste\\Documents\\NetBeansProjects\\Torneo\\src\\sounds\\mixkit-select-click-1109.wav"));
+         AudioInputStream audioIn = AudioSystem.getAudioInputStream(new File("..\\Torneo\\src\\sounds\\mixkit-select-click-1109.wav"));
          // Get a sound clip resource.
          Clip clip = AudioSystem.getClip();
          // Open audio clip and load samples from the audio input stream.
@@ -61,7 +61,7 @@ public class Sound {
     try {
          // Open an audio input stream.
          
-         AudioInputStream audioIn = AudioSystem.getAudioInputStream(new File("C:\\Users\\froste\\Documents\\NetBeansProjects\\Torneo\\src\\sounds\\mixkit-select-click-1109.wav"));
+         AudioInputStream audioIn = AudioSystem.getAudioInputStream(new File("..\\Torneo\\src\\sounds\\mixkit-select-click-1109.wav"));
          // Get a sound clip resource.
          Clip clip = AudioSystem.getClip();
          // Open audio clip and load samples from the audio input stream.

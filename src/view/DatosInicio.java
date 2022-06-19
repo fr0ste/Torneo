@@ -50,12 +50,13 @@ public class DatosInicio extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        txtCategoria = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         txtNombreTorneo = new javax.swing.JTextField();
         jSeparator2 = new javax.swing.JSeparator();
         jSeparator3 = new javax.swing.JSeparator();
         btnContinuar = new javax.swing.JButton();
+        categoriaOpc = new javax.swing.JComboBox<>();
+        jLabel6 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocationByPlatform(true);
@@ -80,7 +81,7 @@ public class DatosInicio extends javax.swing.JFrame {
         jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 51, 51));
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/remove (2).png"))); // NOI18N
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/remove.png"))); // NOI18N
         jLabel5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jLabel5.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -105,17 +106,18 @@ public class DatosInicio extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(48, 76, 134));
 
-        logo.setBackground(new java.awt.Color(0, 204, 153));
+        logo.setBackground(new java.awt.Color(255, 255, 255));
         logo.setFont(new java.awt.Font("Roboto Black", 0, 18)); // NOI18N
+        logo.setForeground(new java.awt.Color(255, 255, 255));
         logo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/iLogo.png"))); // NOI18N
         logo.setText("Torneos");
 
         btnDatosTorneo.setBackground(new java.awt.Color(48, 76, 134));
 
-        jLabel3.setBackground(new java.awt.Color(245, 246, 243));
+        jLabel3.setBackground(new java.awt.Color(65, 168, 224));
         jLabel3.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/trophy.png"))); // NOI18N
         jLabel3.setText("Datos del torneo");
@@ -133,9 +135,7 @@ public class DatosInicio extends javax.swing.JFrame {
         btnDatosTorneo.setLayout(btnDatosTorneoLayout);
         btnDatosTorneoLayout.setHorizontalGroup(
             btnDatosTorneoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, btnDatosTorneoLayout.createSequentialGroup()
-                .addGap(0, 16, Short.MAX_VALUE)
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         btnDatosTorneoLayout.setVerticalGroup(
             btnDatosTorneoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -149,10 +149,11 @@ public class DatosInicio extends javax.swing.JFrame {
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(btnDatosTorneo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+            .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(logo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnDatosTorneo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(logo, javax.swing.GroupLayout.DEFAULT_SIZE, 154, Short.MAX_VALUE)))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -170,29 +171,12 @@ public class DatosInicio extends javax.swing.JFrame {
 
         jLabel2.setFont(new java.awt.Font("Roboto Black", 0, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel2.setText("CATEGORIA");
+        jLabel2.setText("CATEGORÍA");
         background.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 360, -1, -1));
-
-        txtCategoria.setBackground(new java.awt.Color(255, 255, 255));
-        txtCategoria.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
-        txtCategoria.setForeground(new java.awt.Color(153, 153, 153));
-        txtCategoria.setText("Ingrese la categoría");
-        txtCategoria.setBorder(null);
-        txtCategoria.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                txtCategoriaMousePressed(evt);
-            }
-        });
-        txtCategoria.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtCategoriaActionPerformed(evt);
-            }
-        });
-        background.add(txtCategoria, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 400, 350, 30));
 
         jLabel4.setFont(new java.awt.Font("Roboto Black", 0, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel4.setText("NOMBRE");
+        jLabel4.setText("NOMBRE DEL TORNEO");
         background.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 180, -1, -1));
 
         txtNombreTorneo.setBackground(new java.awt.Color(255, 255, 255));
@@ -222,7 +206,7 @@ public class DatosInicio extends javax.swing.JFrame {
         jSeparator3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         background.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 250, 350, 10));
 
-        btnContinuar.setBackground(new java.awt.Color(110, 120, 143));
+        btnContinuar.setBackground(new java.awt.Color(65, 168, 224));
         btnContinuar.setForeground(new java.awt.Color(0, 0, 0));
         btnContinuar.setText("continuar");
         btnContinuar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -232,6 +216,24 @@ public class DatosInicio extends javax.swing.JFrame {
             }
         });
         background.add(btnContinuar, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 510, -1, 30));
+
+        categoriaOpc.setBackground(new java.awt.Color(255, 255, 255));
+        categoriaOpc.setFont(new java.awt.Font("Roboto Black", 0, 12)); // NOI18N
+        categoriaOpc.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Varonil", "Femenil" }));
+        categoriaOpc.setToolTipText("");
+        categoriaOpc.setBorder(null);
+        categoriaOpc.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                categoriaOpcActionPerformed(evt);
+            }
+        });
+        background.add(categoriaOpc, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 401, 350, 30));
+
+        jLabel6.setFont(new java.awt.Font("Roboto Black", 0, 18)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel6.setText("Ingrese los siguientes datos para crear su torneo.");
+        background.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 66, 770, 30));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -246,10 +248,6 @@ public class DatosInicio extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void txtCategoriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCategoriaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtCategoriaActionPerformed
 
     private void txtNombreTorneoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombreTorneoActionPerformed
         // TODO add your handling code here:
@@ -285,38 +283,15 @@ public class DatosInicio extends javax.swing.JFrame {
             
         }
         
-        if (txtCategoria.getText().isEmpty()) {
-            
-            txtCategoria.setText("Ingrese la categoría");
-            txtCategoria.setForeground(Color.gray);
-            
-        }
+        
         
         
         
     }//GEN-LAST:event_txtNombreTorneoMousePressed
 
-    private void txtCategoriaMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtCategoriaMousePressed
-        
-        if (txtCategoria.getText().equals("Ingrese la categoría")) {
-            
-            txtCategoria.setText("");
-            txtCategoria.setForeground(Color.black);
-            
-        }
-        
-        if (txtNombreTorneo.getText().isEmpty()) {
-            
-            txtNombreTorneo.setText("Ingrese el nombre del torneo");
-            txtNombreTorneo.setForeground(Color.gray);
-            
-        }
-        
-    }//GEN-LAST:event_txtCategoriaMousePressed
-
     private void btnContinuarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnContinuarActionPerformed
         
-        if(!txtNombreTorneo.getText().equals("Ingrese el nombre del torneo") && !txtCategoria.getText().equals("Ingrese la categoría") && !txtCategoria.getText().isEmpty() && !txtNombreTorneo.getText().isEmpty()){
+        if(!txtNombreTorneo.getText().equals("Ingrese el nombre del torneo") && !txtNombreTorneo.getText().isEmpty()){
            
             continuar = true;
         }else{
@@ -326,8 +301,8 @@ public class DatosInicio extends javax.swing.JFrame {
                      
         if(continuar){
             Sound.sucessfull();
-            javax.swing.JOptionPane.showMessageDialog(this, txtNombreTorneo.getText() +"\n"+ txtCategoria.getText());
-            new DatosGeneral(new TorneoServiceImpl().crearTorneo(txtNombreTorneo.getText(), txtCategoria.getText())).setVisible(true);
+            javax.swing.JOptionPane.showMessageDialog(this, txtNombreTorneo.getText() +"\n"+ categoriaOpc.getSelectedItem().toString());
+            new DatosGeneral(new TorneoServiceImpl().crearTorneo(txtNombreTorneo.getText(), categoriaOpc.getSelectedItem().toString())).setVisible(true);
             this.hide();
         }
     }//GEN-LAST:event_btnContinuarActionPerformed
@@ -339,6 +314,10 @@ public class DatosInicio extends javax.swing.JFrame {
     private void jLabel3MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseExited
         btnDatosTorneo.setBackground(new Color(48,76,134));
     }//GEN-LAST:event_jLabel3MouseExited
+
+    private void categoriaOpcActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_categoriaOpcActionPerformed
+        btnContinuar.setForeground(Color.black);
+    }//GEN-LAST:event_categoriaOpcActionPerformed
 
     /**
      * @param args the command line arguments
@@ -382,17 +361,18 @@ public class DatosInicio extends javax.swing.JFrame {
     private javax.swing.JPanel background;
     private javax.swing.JButton btnContinuar;
     private javax.swing.JPanel btnDatosTorneo;
+    private javax.swing.JComboBox<String> categoriaOpc;
     private javax.swing.JPanel header;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JLabel logo;
-    private javax.swing.JTextField txtCategoria;
     private javax.swing.JTextField txtNombreTorneo;
     // End of variables declaration//GEN-END:variables
 }

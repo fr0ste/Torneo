@@ -9,7 +9,7 @@ import javax.swing.JLabel;
 
 /**
  *
- * @author ISC-Luis
+ * @autor fr0ste
  */
 public class Grafica {
     
@@ -18,7 +18,7 @@ public class Grafica {
     private List<Equipo> equipos;
     private int rondas;
     private final String imagenVersus= 
-            "C:\\Users\\froste\\Documents\\NetBeansProjects\\Torneo\\src\\images\\vs.jpg";
+            "..\\Torneo\\src\\images\\vs-enfrentamientos.png";
 
     public ArrayList<JLabel> getGrafica() {
 
@@ -34,7 +34,7 @@ public class Grafica {
 
         for (int i = 0; i < rondas; i++) {
             this.encuentros.add(new JLabel());
-            encuentros.add(new JLabel("jornada " + (i + 1)));
+            encuentros.add(new JLabel("\t\t\t\tJORNADA " + (i + 1)));
             this.encuentros.add(new JLabel());
             this.mostrar(this.equipos);
             this.combinar(this.equipos);
@@ -81,7 +81,7 @@ public class Grafica {
                 this.encuentros.add(new JLabel(""));
                 this.encuentros.add(new JLabel("descansa"));
                 
-                System.out.println(equipos.get(i).getNombre() + " descansa");
+                
             } else if (equipos.get(i).getNombre().equals("fantasma")) {
                 equipo1 = new JLabel();
                 Image imagenSeleccionada = new ImageIcon(equipos.get(j).getLogoRuta()).getImage();
@@ -95,7 +95,7 @@ public class Grafica {
                 this.encuentros.add(new JLabel("descansa"));
                 
            
-                System.out.println(equipos.get(j).getNombre() + " descansa");
+                
             } else {
                 
                 //datos del equipo 2
@@ -128,9 +128,9 @@ public class Grafica {
                 this.encuentros.add(equipo2);
                 
                 
-                System.out.println(equipos.get(i).getNombre() + " vs " + equipos.get(j).getNombre());
+               
             }
         }
-        System.out.println("*************************************");
+        
     }
 }
