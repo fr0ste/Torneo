@@ -27,7 +27,7 @@ public interface IJugadorModel {
         
         public void eliminarAlumno(Hashtable<String, Equipo> lista, String id);
         public void actualizarAlumno(Hashtable<String, Equipo> lista, Equipo equipo);
-        public void mostrarJugadores(Hashtable<String, Equipo> lista, DefaultTableModel modelo);
+        public void mostrarJugadores(Hashtable<String, Jugador> lista, DefaultTableModel modelo, String nombreEquipo);
 
 	
 }

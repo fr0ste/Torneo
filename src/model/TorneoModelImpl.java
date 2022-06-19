@@ -10,9 +10,15 @@
 
 package model;
 
+import java.util.ArrayList;
 import java.util.Hashtable;
+import java.util.List;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
 
 import pojo.Equipo;
+import pojo.Grafica;
 import pojo.Jugador;
 import pojo.Torneo;
 
@@ -23,6 +29,24 @@ public class TorneoModelImpl implements ITorneoModel {
 
 		return new Torneo(nombreTorneo, categoria);
 	}
+        
+        public void Grafica(Torneo torneo, JPanel label){
+            label.removeAll();
+            List<JTextField> encuentros;
+            List<Equipo> equipos;
+            equipos = new ArrayList<>(torneo.getEquipos().values());
+            
+            Grafica grafica =  new Grafica(equipos);
+            encuentros = grafica.getGrafica();
+                   
+           for(int i =0; i<encuentros.size(); i++){
+               
+               label.add(encuentros.get(i));
+           }
+            
+            
+            
+        }
 
 	@Override
 	public void guardarEquipo(Hashtable<String, Equipo> lista, Equipo equipo) {

@@ -53,8 +53,8 @@ public class JugadorServiceImpl implements IJugadorService {
     }
 
     @Override
-    public void mostrarJugadores(Hashtable<String, Equipo> lista, DefaultTableModel modelo) {
-        model.mostrarJugadores(lista, modelo);
+    public void mostrarJugadores(Hashtable<String, Jugador> lista, DefaultTableModel modelo, String nombreEquipo) {
+        model.mostrarJugadores(lista, modelo,nombreEquipo);
     }
 
 	

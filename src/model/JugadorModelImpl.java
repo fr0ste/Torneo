@@ -44,18 +44,14 @@ public class JugadorModelImpl implements IJugadorModel {
 	}
 
     @Override
-    public void mostrarJugadores(Hashtable<String, Equipo> lista, DefaultTableModel modelo) {
+    public void mostrarJugadores(Hashtable<String, Jugador> lista, DefaultTableModel modelo, String nombreEquipo) {
         
-        modelo.setRowCount(0);
+        modelo.setRowCount(0);     
         
-        ArrayList<Equipo> lEquipos = new ArrayList<>(lista.values());
         
-       
-        
-        for (int i = 0; i < lEquipos.size(); i++) {
             
             ArrayList<Jugador> lJugador;
-            lJugador = new ArrayList<>(lEquipos.get(i).getJugadores().values());
+            lJugador = new ArrayList<>(lista.values());
             
             if(!lJugador.isEmpty()){
             
@@ -68,7 +64,7 @@ public class JugadorModelImpl implements IJugadorModel {
            fila[2] = lJugador.get(j).getDireccion();
             fila[3] =lJugador.get(j).getTelefono();
             fila[4] = lJugador.get(j).getEdad();
-            fila[5] = lEquipos.get(i).getNombre();
+            fila[5] = nombreEquipo;
                            
            
             
@@ -78,5 +74,5 @@ public class JugadorModelImpl implements IJugadorModel {
         
     }
         
-    }
+    
 }

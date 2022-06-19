@@ -11,6 +11,9 @@
 package service;
 
 import java.util.*;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
 
 import model.ITorneoModel;
 import model.TorneoModelImpl;
@@ -22,39 +25,18 @@ import pojo.Torneo;
 public class TorneoServiceImpl implements ITorneoService {
 
 	public static final int maxEquipos = 5;
-	private ITorneoModel torneo = new TorneoModelImpl();
+	private ITorneoModel torneoModel = new TorneoModelImpl();
 	private IEquipoService EquipoService = new EquipoServiceImpl();
+        private Grafica grafica;
 
 	public Torneo crearTorneo(String nombreTorneo, String categoria) {
 
-		return torneo.crearTorneo(nombreTorneo, categoria);
+		return torneoModel.crearTorneo(nombreTorneo, categoria);
 	}
 
-	public void Grafica(Torneo torneo) {
-
-		// Getting keySets of Hashtable and
-		// storing it into Set
-		Set<String> setOfKeys = torneo.getEquipos().keySet();
-
-		// Creating an Iterator object to
-		// iterate over the given Hashtable
-		Iterator<String> itr = setOfKeys.iterator();
-		String a = itr.next();
-
-		int n = (int) (Integer.parseInt(a) - 2);
-
-		System.out.println("\n\n");
-		System.out.println("*-*-*-*-*-ENCUENTROS-*-*-*-*");
-		System.out.println("\n\n");
-
-		torneo.getEquipos().forEach(
-				(key, value) -> System.out.println("id : " + key + "\tNombre del equipo : " + value.getNombre()));
-
-		System.out.println("\n\n");
-		System.out.println(Grafica.getGrafica(n));
-
-		System.out.println("\n\n");
-
+	public void Grafica(Torneo torneo, JPanel label) {
+              
+           torneoModel.Grafica(torneo, label);
 	}
 
     @Override

@@ -30,7 +30,9 @@ public interface IJugadorService {
 
 	public Hashtable<String, Jugador> obtenerTodosJugador(Hashtable<String, Jugador> lista, Jugador jugador);
         
-        public void mostrarJugadores(Hashtable<String, Equipo> lista, DefaultTableModel modelo);
+        public void mostrarJugadores(Hashtable<String, Jugador> lista, DefaultTableModel modelo, String nombreEquipo);
+       
+        
 
 }
 

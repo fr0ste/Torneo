@@ -11,6 +11,8 @@
 package service;
 
 import java.util.Hashtable;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
 
 import pojo.Equipo;
 import pojo.Grafica;
@@ -28,5 +30,7 @@ public interface ITorneoService {
 	public void actualizarEquipo(Hashtable<String, Equipo> lista, Equipo equipo);
 
 	public Jugador obtenerUnEquipo(Hashtable<String, Equipo> lista, String idEquipo);
+        
+        public void Grafica(Torneo torneo, JPanel label);
 
 }

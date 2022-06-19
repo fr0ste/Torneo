@@ -1,56 +1,67 @@
 package pojo;
+
+import java.util.ArrayList;
+import java.util.List;
+import javax.swing.JTextField;
+
 /**
 *
 * @author ISC-Luis
 */
 public class Grafica {
 
-    public static String getGrafica(int n) {
-        Grafica rr = new Grafica(0);
-        String buffer = null;
-        for (int i = 0; i < 3; i++) {
+    public ArrayList<JTextField> getGrafica() {
+    
+        
+       
+        if(!(this.equipos.size()%2==0)){
             
-            
-            buffer += ("jornada " + (i+1));
-            rr.mostrar(); 
-            rr.combinar();
-        }  
-        return buffer;
-    }
-
-    private String[] equipos= new String[4];
-
-    public Grafica(int n) {
-        this.equipos[0]="A";
-        this.equipos[1]="B";
-        this.equipos[2]="C";
-        /*this.equipos[3]="D";
-        this.equipos[4]="E";
-        this.equipos[5]="F";
-        this.equipos[6]="G";
-        this.equipos[7]="H";
-        this.equipos[8]="I";
-        */
-       this.equipos[3]="fantasma";
-    }
-
-    public void combinar(){            
-        String buffer=equipos[equipos.length-1];
-  
-        for (int i = equipos.length-1; i > 1; i--) {
-            equipos[i]=equipos[i-1];
+            Equipo equipoFantasma =new Equipo();
+            equipoFantasma.setNombre("fantasma");
+            this.equipos.add(equipoFantasma);
         }
-        equipos[1]=buffer;  
+            
+        for (int i = 0; i < this.equipos.size(); i++) {
+            
+            
+            encuentros.add(new JTextField( "jornada " + (i+1)));
+            this.mostrar(this.equipos); 
+            this.combinar(this.equipos);
+        }  
+        return encuentros;
+    }
+    
+    private ArrayList<JTextField> encuentros= new ArrayList<>();
+    private List<Equipo> equipos;
+    
+
+    public Grafica(List<Equipo> equipos) {
+        
+        this.equipos = equipos;
+     
     }
 
-    public void mostrar(){
-        for (int i = 0, j=equipos.length-1; i<j; i++, j--) {
-        	if(equipos[j].equals("fantasma") ) {
-        		System.out.println(equipos[i] + " descansa");
-        	}else if(equipos[i].equals("fantasma")){
-                System.out.println(equipos[i] + " descansa");
+    public void combinar(List<Equipo> equipos){            
+        Equipo buffer=equipos.get(equipos.size()-1);
+  
+        for (int i = equipos.size()-1; i > 1; i--) {
+            equipos.set(i, equipos.get(i-1));;
+        }
+        equipos.set(1, buffer);  
+    }
+
+    public void mostrar(List<Equipo> equipos){
+        for (int i = 0, j=equipos.size()-1; i<j; i++, j--) {
+        	if(equipos.get(j).getNombre().equals("fantasma") ) {
+                    
+                    this.encuentros.add(new JTextField(equipos.get(i).getNombre() + " descansa"));
+        		System.out.println(equipos.get(i).getNombre() + " descansa");
+        	}else if(equipos.get(i).getNombre().equals("fantasma")){
+                    this.encuentros.add(new JTextField(equipos.get(j).getNombre() + " descansa"));
+                System.out.println(equipos.get(j).getNombre() + " descansa");
                 }else{
-            System.out.println(equipos[i]+" vs "+ equipos[j]);
+                    this.encuentros.add(new JTextField(equipos.get(i).getNombre()+" vs "+ equipos.get(j).getNombre()));
+                    System.out.println(equipos.get(i).getNombre()+" vs "+ equipos.get(j).getNombre());
         	}
         }
         System.out.println("*************************************");
