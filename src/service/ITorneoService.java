@@ -15,7 +15,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 import pojo.Equipo;
-import pojo.Grafica;
+import utilidades.Grafica;
 import pojo.Jugador;
 import pojo.Torneo;
 

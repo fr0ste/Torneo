@@ -5,7 +5,7 @@
  */
 package view;
 
-import pojo.Sound;
+import utilidades.Sound;
 
 
 
@@ -24,6 +24,7 @@ public class Principal extends javax.swing.JFrame {
      */
     public Principal() {
         initComponents();
+        setLocationRelativeTo(null);
     }
 
     /**

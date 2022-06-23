@@ -48,7 +48,6 @@ public class JugadorModelImpl implements IJugadorModel {
         
         modelo.setRowCount(0);     
         
-        
             
             ArrayList<Jugador> lJugador;
             lJugador = new ArrayList<>(lista.values());

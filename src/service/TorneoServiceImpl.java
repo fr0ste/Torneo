@@ -18,7 +18,7 @@ import javax.swing.JTextField;
 import model.ITorneoModel;
 import model.TorneoModelImpl;
 import pojo.Equipo;
-import pojo.Grafica;
+import utilidades.Grafica;
 import pojo.Jugador;
 import pojo.Torneo;
 
