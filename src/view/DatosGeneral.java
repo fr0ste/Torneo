@@ -1100,7 +1100,8 @@ public class DatosGeneral extends javax.swing.JFrame {
      * @param evt 
      */
     private void tablaEquipos1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tablaEquipos1MouseClicked
-        idEquipo = tablaEquipos1.getValueAt(tablaEquipos1.getSelectedRow(), 0).toString();
+        idEquipo = tablaEquipos1.getValueAt(
+                tablaEquipos1.getSelectedRow(), 0).toString();
 
         if (!idEquipo.isEmpty()) {
             btnAgregarJugador.setVisible(true);
@@ -1136,7 +1137,8 @@ public class DatosGeneral extends javax.swing.JFrame {
 
         if (!txtNombreEquipo.getText().equals("Ingrese el nombre del equipo")
                 && !txtNombreEquipo.getText().isEmpty()
-                && !txtIngresarLogo.getText().equals("Click aqui para cargar su logo")) {
+                && !txtIngresarLogo.getText().equals(
+                        "Click aqui para cargar su logo")) {
 
             torneo.setEquipos(equipoService.crearEquipo(
                     txtNombreEquipo.getText(),
@@ -1147,7 +1149,8 @@ public class DatosGeneral extends javax.swing.JFrame {
 
         } else {
             Sound.error();
-            javax.swing.JOptionPane.showMessageDialog(this, "ingrese un nombre");
+            javax.swing.JOptionPane.showMessageDialog(
+                    this, "ingrese un nombre");
         }//fin if
 
         if (continuar) {
@@ -1184,8 +1187,13 @@ public class DatosGeneral extends javax.swing.JFrame {
             //inicio if
             
             Sound.sucessfull();
-            String idJugador = String.valueOf(torneo.getEquipos().get(idEquipo).getJugadores().size() + 1);
-            Jugador jugador = jugadorService.crearJugador(idJugador, txtNombreJugador.getText(), Integer.parseInt(txtNumeroJugador.getText()), txtDireccionJugador.getText(), txtTelefonoJugador.getText());
+            String idJugador = String.valueOf(
+                    torneo.getEquipos().get(idEquipo).getJugadores().size() + 1);
+            Jugador jugador = jugadorService.crearJugador(
+                    idJugador, txtNombreJugador.getText(), 
+                    Integer.parseInt(txtNumeroJugador.getText()), 
+                    txtDireccionJugador.getText(), 
+                    txtTelefonoJugador.getText());
 
             torneo.getEquipos().get(idEquipo).setJugador(jugador);
             javax.swing.JOptionPane.showMessageDialog(this, "datos guardados");
@@ -1200,9 +1208,12 @@ public class DatosGeneral extends javax.swing.JFrame {
             txtDireccionJugador.setForeground(Color.gray);
 
             contenedorVentanas.setSelectedIndex(3);
-            jugadorService.mostrarJugadores(torneo.getEquipos().get(idEquipo).getJugadores(), modelTabla, idEquipo);
+            jugadorService.mostrarJugadores(
+                    torneo.getEquipos().get(idEquipo).
+                            getJugadores(), modelTabla, idEquipo);
         } else {
-            javax.swing.JOptionPane.showMessageDialog(this, "rellene los campos correctamente");
+            javax.swing.JOptionPane.showMessageDialog(
+                    this, "rellene los campos correctamente");
         }
 
     }//GEN-LAST:event_btnContinuarActionPerformed
@@ -1212,7 +1223,8 @@ public class DatosGeneral extends javax.swing.JFrame {
      * @param evt 
      */
     private void txtNumeroJugadorMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtNumeroJugadorMousePressed
-        if (txtNumeroJugador.getText().equals("Ingrese el número con el que jugará")) {
+        if (txtNumeroJugador.getText().equals(
+                "Ingrese el número con el que jugará")) {
 
             txtNumeroJugador.setText("");
             txtNumeroJugador.setForeground(Color.black);
@@ -1248,7 +1260,8 @@ public class DatosGeneral extends javax.swing.JFrame {
      * @param evt 
      */
     private void txtTelefonoJugadorMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtTelefonoJugadorMousePressed
-        if (txtTelefonoJugador.getText().equals("Ingrese el teléfono del jugador")) {
+        if (txtTelefonoJugador.getText().equals(
+                "Ingrese el teléfono del jugador")) {
 
             txtTelefonoJugador.setText("");
             txtTelefonoJugador.setForeground(Color.black);
@@ -1283,7 +1296,8 @@ public class DatosGeneral extends javax.swing.JFrame {
      */
     private void txtDireccionJugadorMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtDireccionJugadorMousePressed
 
-        if (txtDireccionJugador.getText().equals("Ingrese la dirección del jugador")) {
+        if (txtDireccionJugador.getText().equals(
+                "Ingrese la dirección del jugador")) {
 
             txtDireccionJugador.setText("");
             txtDireccionJugador.setForeground(Color.black);
@@ -1319,7 +1333,8 @@ public class DatosGeneral extends javax.swing.JFrame {
      */
     private void txtNombreJugadorMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtNombreJugadorMousePressed
 
-        if (txtNombreJugador.getText().equals("Ingrese el nombre del jugador")) {
+        if (txtNombreJugador.getText().equals(
+                "Ingrese el nombre del jugador")) {
 
             txtNombreJugador.setText("");
             txtNombreJugador.setForeground(Color.black);
@@ -1356,7 +1371,9 @@ public class DatosGeneral extends javax.swing.JFrame {
     private void txtIngresarLogoMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtIngresarLogoMousePressed
         JFileChooser selectImage = new JFileChooser();
         String ruta;
-        FileNameExtensionFilter filtroBusqueda = new FileNameExtensionFilter("JPG, PNG & GIF", "jpg", "png", "gif");
+        FileNameExtensionFilter filtroBusqueda = 
+                new FileNameExtensionFilter(
+                        "JPG, PNG & GIF", "jpg", "png", "gif");
         selectImage.setFileFilter(filtroBusqueda);
 
         int opcionSeleccionada = selectImage.showOpenDialog(this);
@@ -1368,8 +1385,10 @@ public class DatosGeneral extends javax.swing.JFrame {
             Image imagenSeleccionada = new ImageIcon(ruta).getImage();
 
             ImageIcon iconoEquipo = new ImageIcon(
-                    imagenSeleccionada.getScaledInstance(previsualizadorLogo.getWidth(),
-                            previsualizadorLogo.getHeight(), Image.SCALE_SMOOTH));
+                    imagenSeleccionada.getScaledInstance(
+                            previsualizadorLogo.getWidth(),
+                            previsualizadorLogo.getHeight(), 
+                            Image.SCALE_SMOOTH));
 
             previsualizadorLogo.setIcon(iconoEquipo);
 
@@ -1386,7 +1405,8 @@ public class DatosGeneral extends javax.swing.JFrame {
         Image imagenSeleccionada = new ImageIcon(ruta).getImage();
 
         ImageIcon iconoEquipo = new ImageIcon(
-                imagenSeleccionada.getScaledInstance(previsualizadorLogo.getWidth(),
+                imagenSeleccionada.getScaledInstance(
+                        previsualizadorLogo.getWidth(),
                         previsualizadorLogo.getHeight(), Image.SCALE_SMOOTH));
 
         previsualizadorLogo.setIcon(iconoEquipo);

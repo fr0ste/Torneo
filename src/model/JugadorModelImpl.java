@@ -11,7 +11,7 @@
 package model;
 
 import java.util.ArrayList;
-import java.util.Hashtable;
+import java.util.HashMap;
 import java.util.Map;
 import javax.swing.table.DefaultTableModel;
 import pojo.Equipo;
@@ -20,31 +20,31 @@ import pojo.Jugador;
 public class JugadorModelImpl implements IJugadorModel {
 
 	@Override
-	public void crearJugador(Hashtable<String, Jugador> lista, Jugador jugador) {
+	public void crearJugador(
+                HashMap<String, Jugador> lista, Jugador jugador) {
 		lista.put(jugador.getId(), jugador);
 	}
-
-	public void eliminarAlumno(Hashtable<String, Equipo> lista, String id){
         
-        lista.remove(id);
-        }
-
-    @Override
-    public void actualizarAlumno(Hashtable<String, Equipo> lista, Equipo equipo) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-    
-    
-
-	@Override
-	public Jugador crearJugador(String id, String nombre, int edad, String direccion, String telefono) {
+        @Override
+	public Jugador crearJugador(
+                String id, String nombre, int edad, String direccion,
+                String telefono) {
 
 		return new Jugador(id, nombre, edad, direccion, telefono);
 
 	}
 
+	public void eliminarJugador(HashMap<String, Equipo> lista, String id){
+        
+        lista.remove(id);
+        }
+        
+	
+
     @Override
-    public void mostrarJugadores(Hashtable<String, Jugador> lista, DefaultTableModel modelo, String nombreEquipo) {
+    public void mostrarJugadores(
+            HashMap<String, Jugador> lista, 
+            DefaultTableModel modelo, String nombreEquipo) {
         
         modelo.setRowCount(0);     
         

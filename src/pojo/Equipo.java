@@ -10,17 +10,17 @@
 
 package pojo;
 
-import java.util.Hashtable;
+import java.util.HashMap;
 
 public class Equipo {
 
 	private String id;
 	private String nombre;
         private String LogoRuta;
-	private Hashtable<String, Jugador> jugadores;
+	private HashMap<String, Jugador> jugadores;
 
 	public Equipo() {
-		jugadores = new Hashtable<String, Jugador>();
+		jugadores = new HashMap<String, Jugador>();
 	}
 
 	public Equipo(String nombre, String id, String logo) {
@@ -28,7 +28,7 @@ public class Equipo {
 		this.setNombre(nombre);
 		this.setId(id);
                 this.LogoRuta = logo;
-		jugadores = new Hashtable<String, Jugador>();
+		jugadores = new HashMap<String, Jugador>();
 
 	}
 
@@ -50,7 +50,7 @@ public class Equipo {
 		this.nombre = nombre;
 	}
 
-	public Hashtable<String, Jugador> getJugadores() {
+	public HashMap<String, Jugador> getJugadores() {
 		return jugadores;
 	}
 

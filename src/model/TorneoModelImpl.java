@@ -11,15 +11,11 @@
 package model;
 
 import java.util.ArrayList;
-import java.util.Hashtable;
 import java.util.List;
-import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JLabel;
-
 import pojo.Equipo;
 import utilidades.Grafica;
-import pojo.Jugador;
 import pojo.Torneo;
 
 public class TorneoModelImpl implements ITorneoModel {
@@ -30,6 +26,7 @@ public class TorneoModelImpl implements ITorneoModel {
 		return new Torneo(nombreTorneo, categoria);
 	}
         
+        @Override
         public void Grafica(Torneo torneo, JPanel label){
             label.removeAll();
             List<JLabel> encuentros;
@@ -47,29 +44,5 @@ public class TorneoModelImpl implements ITorneoModel {
             
             
         }
-
-	@Override
-	public void guardarEquipo(Hashtable<String, Equipo> lista, Equipo equipo) {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void eliminarEquipo(Hashtable<String, Equipo> lista, String idEquipo) {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void actualizarEquipo(Hashtable<String, Equipo> lista, Equipo equipo) {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public Jugador obtenerUnEquipo(Hashtable<String, Equipo> lista, String idEquipo) {
-		// TODO Auto-generated method stub
-		return null;
-	}
 
 }

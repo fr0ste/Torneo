@@ -1,10 +1,10 @@
 package pojo;
 
 import java.util.ArrayList;
-import java.util.Hashtable;
+import java.util.HashMap;
 
 public class Torneo {
-	private Hashtable<String, Equipo> equipos;
+	private HashMap<String, Equipo> equipos;
 	private String nombreTorneo;
 	/*
 	 * Autor:Figueroa Mart�nez Joel Francisco
@@ -25,11 +25,11 @@ public class Torneo {
 
 		this.nombreTorneo = nombreTorneo;
 		this.categoria = categoria;
-		equipos = new Hashtable<String, Equipo>();
+		equipos = new HashMap<String, Equipo>();
 	}
 
 	// getters && setters
-	public Hashtable<String, Equipo> getEquipos() {
+	public HashMap<String, Equipo> getEquipos() {
                             
             return equipos;
 	}

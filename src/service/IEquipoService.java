@@ -10,19 +10,14 @@
 
 package service;
 
-import java.util.Hashtable;
-import java.util.List;
+import java.util.HashMap;
 import javax.swing.table.DefaultTableModel;
-
 import pojo.Equipo;
-import pojo.Jugador;
 
 public interface IEquipoService {
 
 	public Equipo crearEquipo(String nombre, String id,String logo);
-         public void eliminarAlumno(Hashtable<String, Equipo> lista, String id);
-        public void actualizarAlumno(Hashtable<String, Equipo> lista, Equipo equipo);
-        public void mostrarEquipos(Hashtable<String, Equipo> lista, DefaultTableModel modelo);
-
+        public void mostrarEquipos(
+                HashMap<String, Equipo> lista, DefaultTableModel modelo);
 
 }

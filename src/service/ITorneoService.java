@@ -9,27 +9,12 @@
  */
 
 package service;
-
-import java.util.Hashtable;
-import javax.swing.JLabel;
 import javax.swing.JPanel;
-
-import pojo.Equipo;
-import utilidades.Grafica;
-import pojo.Jugador;
 import pojo.Torneo;
 
 public interface ITorneoService {
 
 	public Torneo crearTorneo(String nombreTorneo, String categoria);
-
-	public void guardarEquipo(Hashtable<String, Equipo> lista, Equipo equipo);
-
-	public void eliminarEquipo(Hashtable<String, Equipo> lista, String idEquipo);
-
-	public void actualizarEquipo(Hashtable<String, Equipo> lista, Equipo equipo);
-
-	public Jugador obtenerUnEquipo(Hashtable<String, Equipo> lista, String idEquipo);
         
         public void Grafica(Torneo torneo, JPanel label);
 

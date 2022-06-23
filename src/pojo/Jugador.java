@@ -18,7 +18,9 @@ public class Jugador extends Persona {
 
 	}
 
-	public Jugador(String id, String nombre, int edad, String direccion, String telefono) {
+	public Jugador(
+                String id, String nombre, int edad,
+                String direccion, String telefono) {
 
 		this.id = id;
 		this.setDireccion(direccion);
@@ -39,8 +41,10 @@ public class Jugador extends Persona {
 	@Override
 	public String toString() {
 
-		return "\t\t\tJugador " + id + "\nNombre del jugador: " + getNombre() + "\nEdad: " + getEdad() + "\nDireccion: "
-				+ getDireccion() + "\nTelefono: " + getTelefono() + "\n\n";
+		return getEdad() + "\nDireccion: " +
+                        getDireccion()	+ "\nTelefono: " + getTelefono() +
+                        "\t\t\tJugador " + id + "\nNombre del jugador: " +
+                        getNombre() + "\nEdad: ";
 
 	}
 

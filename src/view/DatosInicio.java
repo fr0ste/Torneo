@@ -274,7 +274,8 @@ public class DatosInicio extends javax.swing.JFrame {
      */
     private void btnContinuarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnContinuarActionPerformed
         
-        if(!txtNombreTorneo.getText().equals("Ingrese el nombre del torneo") && !txtNombreTorneo.getText().isEmpty()){
+        if(!txtNombreTorneo.getText().equals("Ingrese el nombre del torneo") &&
+                !txtNombreTorneo.getText().isEmpty()){
            
             continuar = true;
         }else{
@@ -284,8 +285,12 @@ public class DatosInicio extends javax.swing.JFrame {
                      
         if(continuar){
             Sound.sucessfull();
-            javax.swing.JOptionPane.showMessageDialog(this, txtNombreTorneo.getText() +"\n"+ categoriaOpc.getSelectedItem().toString());
-            new DatosGeneral(new TorneoServiceImpl().crearTorneo(txtNombreTorneo.getText(), categoriaOpc.getSelectedItem().toString())).setVisible(true);
+            javax.swing.JOptionPane.showMessageDialog(
+                    this, txtNombreTorneo.getText() +"\n"+ 
+                            categoriaOpc.getSelectedItem().toString());
+            new DatosGeneral(new TorneoServiceImpl().crearTorneo(
+                    txtNombreTorneo.getText(), 
+                    categoriaOpc.getSelectedItem().toString())).setVisible(true);
             this.hide();
         }
     }//GEN-LAST:event_btnContinuarActionPerformed

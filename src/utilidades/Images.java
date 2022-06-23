@@ -16,7 +16,9 @@ package utilidades;
  */
 public class Images {
     
-    public static final String VERSUS = "..\\Torneo\\src\\images\\vs-enfrentamientos.png";
-    public static final String LOGOGENERICO = "..\\Torneo\\src\\images\\teamLogo.png";
+    public static final String VERSUS = 
+            "..\\Torneo\\src\\images\\vs-enfrentamientos.png";
+    public static final String LOGOGENERICO = 
+            "..\\Torneo\\src\\images\\teamLogo.png";
     
 }

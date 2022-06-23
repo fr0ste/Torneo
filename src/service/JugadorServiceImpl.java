@@ -10,50 +10,29 @@
 
 package service;
 
-import java.util.Hashtable;
-import java.util.Scanner;
+import java.util.HashMap;
 import javax.swing.table.DefaultTableModel;
 
 import model.IJugadorModel;
 import model.JugadorModelImpl;
-import pojo.Equipo;
 import pojo.Jugador;
 
 public class JugadorServiceImpl implements IJugadorService {
 	IJugadorModel model = new JugadorModelImpl();
+    
 
     @Override
-    public void crearJugador(Hashtable<String, Jugador> lista, Jugador jugador) {
-        model.crearJugador(lista, jugador);
+    public Jugador crearJugador(
+            String id, String nombre, int edad, String direccion, 
+            String telefono) {
+        return model.crearJugador(
+                id, nombre, edad, direccion, telefono);
     }
 
     @Override
-    public Jugador crearJugador(String id, String nombre, int edad, String direccion, String telefono) {
-        return model.crearJugador(id, nombre, edad, direccion, telefono);
-    }
-
-    @Override
-    public void eliminarJugador(Hashtable<String, Jugador> lista, String idJugador) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    @Override
-    public void actualizarJugador(Hashtable<String, Jugador> lista, Jugador jugador) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    @Override
-    public Jugador obtenerUnJugador(Hashtable<String, Jugador> lista, String idJugador) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    @Override
-    public Hashtable<String, Jugador> obtenerTodosJugador(Hashtable<String, Jugador> lista, Jugador jugador) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    @Override
-    public void mostrarJugadores(Hashtable<String, Jugador> lista, DefaultTableModel modelo, String nombreEquipo) {
+    public void mostrarJugadores(
+            HashMap<String, Jugador> lista,
+            DefaultTableModel modelo, String nombreEquipo) {
         model.mostrarJugadores(lista, modelo,nombreEquipo);
     }
 

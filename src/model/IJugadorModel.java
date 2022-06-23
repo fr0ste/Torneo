@@ -10,24 +10,24 @@
 
 package model;
 
-import java.util.Hashtable;
+import java.util.HashMap;
 import javax.swing.table.DefaultTableModel;
 import pojo.Equipo;
 
 import pojo.Jugador;
 
 public interface IJugadorModel {
-	// CRUD 5 metodos, crear, eliminar, actualizar, leer 1 registro, leer todos los
-	// registros
-	// public Jugador crearJugador();
 
-	public void crearJugador(Hashtable<String, Jugador> lista, Jugador jugador);
+	public void crearJugador(
+                HashMap<String, Jugador> lista, Jugador jugador);
 
-	public Jugador crearJugador(String id, String nombre, int edad, String direccion, String telefono);
+	public Jugador crearJugador(
+                String id, String nombre, int edad, String direccion, String telefono);
         
-        public void eliminarAlumno(Hashtable<String, Equipo> lista, String id);
-        public void actualizarAlumno(Hashtable<String, Equipo> lista, Equipo equipo);
-        public void mostrarJugadores(Hashtable<String, Jugador> lista, DefaultTableModel modelo, String nombreEquipo);
+        public void eliminarJugador(
+                HashMap<String, Equipo> lista, String id);
+        
+        public void mostrarJugadores(HashMap<String, Jugador> lista, DefaultTableModel modelo, String nombreEquipo);
 
 	
 }

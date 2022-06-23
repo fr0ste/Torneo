@@ -12,15 +12,11 @@
 
 package service;
 
-import java.util.Hashtable;
-import java.util.List;
-import java.util.Scanner;
+import java.util.HashMap;
 import javax.swing.table.DefaultTableModel;
-
 import model.EquipoModelImpl;
 import model.IEquipoModel;
 import pojo.Equipo;
-import pojo.Jugador;
 
 public class EquipoServiceImpl implements IEquipoService {
 
@@ -34,18 +30,9 @@ public class EquipoServiceImpl implements IEquipoService {
     }
 
     @Override
-    public void eliminarAlumno(Hashtable<String, Equipo> lista, String id) {
-        model.eliminarAlumno(lista, id);
-    }
-
-    @Override
-    public void actualizarAlumno(Hashtable<String, Equipo> lista, Equipo equipo) {
-        model.actualizarAlumno(lista, equipo);
-    }
-
-    @Override
-    public void mostrarEquipos(Hashtable<String, Equipo> lista, DefaultTableModel modelo) {
-        model.mostrarEquipos(lista, modelo);
+    public void mostrarEquipos(
+            HashMap<String, Equipo> lista, DefaultTableModel modelo) {
+        model.mostrarEquipo(lista, modelo);
     }
 
 	
