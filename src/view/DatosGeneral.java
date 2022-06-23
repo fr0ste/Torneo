@@ -1,9 +1,9 @@
 /* Autor:Figueroa Mart�nez Joel Francisco
  * 
- * Fecha de creaci�n: 20/06/2022
- * Fecha de modificaci�n: 20/06/2022
+ * Fecha de creación: 20/06/2022
+ * Fecha de modificación: 20/06/2022
  * 
- * Descripci�n: ventana con las principales opciones para la gestion del torneo.
+ * Descripción: ventana con las principales opciones para la gestion del torneo.
  * 
  * 
  */
@@ -96,7 +96,7 @@ public class DatosGeneral extends javax.swing.JFrame {
         ventnaInicio = new javax.swing.JPanel();
         informacionPrincipal = new javax.swing.JLabel();
         backgroundViewPrincipal = new javax.swing.JLabel();
-        backgroundInicio = new javax.swing.JPanel();
+        ventanaDatosTorneo = new javax.swing.JPanel();
         jlbNombreTorneo = new javax.swing.JLabel();
         txtNombreTorneo1 = new javax.swing.JTextField();
         jSeparatorNombre = new javax.swing.JSeparator();
@@ -419,7 +419,7 @@ public class DatosGeneral extends javax.swing.JFrame {
 
         contenedorVentanas.addTab("tab1", ventnaInicio);
 
-        backgroundInicio.setBackground(new java.awt.Color(255, 255, 255));
+        ventanaDatosTorneo.setBackground(new java.awt.Color(255, 255, 255));
 
         jlbNombreTorneo.setFont(new java.awt.Font("Roboto Black", 0, 18)); // NOI18N
         jlbNombreTorneo.setForeground(new java.awt.Color(0, 0, 0));
@@ -444,11 +444,6 @@ public class DatosGeneral extends javax.swing.JFrame {
         txtCategoria1.setForeground(new java.awt.Color(153, 153, 153));
         txtCategoria1.setText("Ingrese la categoria");
         txtCategoria1.setBorder(null);
-        txtCategoria1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtCategoria1ActionPerformed(evt);
-            }
-        });
 
         jSeparatorCategoria.setForeground(new java.awt.Color(153, 153, 153));
 
@@ -458,33 +453,33 @@ public class DatosGeneral extends javax.swing.JFrame {
         logoVentanaInicio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/iLogo.png"))); // NOI18N
         logoVentanaInicio.setText("TORNEOS");
 
-        javax.swing.GroupLayout backgroundInicioLayout = new javax.swing.GroupLayout(backgroundInicio);
-        backgroundInicio.setLayout(backgroundInicioLayout);
-        backgroundInicioLayout.setHorizontalGroup(
-            backgroundInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(backgroundInicioLayout.createSequentialGroup()
+        javax.swing.GroupLayout ventanaDatosTorneoLayout = new javax.swing.GroupLayout(ventanaDatosTorneo);
+        ventanaDatosTorneo.setLayout(ventanaDatosTorneoLayout);
+        ventanaDatosTorneoLayout.setHorizontalGroup(
+            ventanaDatosTorneoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ventanaDatosTorneoLayout.createSequentialGroup()
                 .addGap(50, 50, 50)
-                .addGroup(backgroundInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(backgroundInicioLayout.createSequentialGroup()
-                        .addGroup(backgroundInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(ventanaDatosTorneoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(ventanaDatosTorneoLayout.createSequentialGroup()
+                        .addGroup(ventanaDatosTorneoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jlbCategoria)
-                            .addGroup(backgroundInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addGroup(backgroundInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(ventanaDatosTorneoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addGroup(ventanaDatosTorneoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(txtCategoria1, javax.swing.GroupLayout.PREFERRED_SIZE, 340, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jSeparatorCategoria, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(backgroundInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(ventanaDatosTorneoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jlbNombreTorneo)
                                     .addComponent(txtNombreTorneo1, javax.swing.GroupLayout.PREFERRED_SIZE, 340, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jSeparatorNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addGap(209, 209, 209))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, backgroundInicioLayout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ventanaDatosTorneoLayout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 428, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(logoVentanaInicio)))
                 .addContainerGap(51, Short.MAX_VALUE))
         );
-        backgroundInicioLayout.setVerticalGroup(
-            backgroundInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(backgroundInicioLayout.createSequentialGroup()
+        ventanaDatosTorneoLayout.setVerticalGroup(
+            ventanaDatosTorneoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ventanaDatosTorneoLayout.createSequentialGroup()
                 .addGap(133, 133, 133)
                 .addComponent(jlbNombreTorneo)
                 .addGap(26, 26, 26)
@@ -502,7 +497,7 @@ public class DatosGeneral extends javax.swing.JFrame {
                 .addContainerGap(133, Short.MAX_VALUE))
         );
 
-        contenedorVentanas.addTab("tab2", backgroundInicio);
+        contenedorVentanas.addTab("tab2", ventanaDatosTorneo);
 
         ventanaGestionEquipos.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -700,11 +695,6 @@ public class DatosGeneral extends javax.swing.JFrame {
                 txtNumeroJugadorMousePressed(evt);
             }
         });
-        txtNumeroJugador.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtNumeroJugadorActionPerformed(evt);
-            }
-        });
         ventanaAgregarJugador.add(txtNumeroJugador, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 400, 280, 30));
 
         jlblNumeroJugador.setFont(new java.awt.Font("Roboto Black", 0, 18)); // NOI18N
@@ -723,11 +713,6 @@ public class DatosGeneral extends javax.swing.JFrame {
         txtTelefonoJugador.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 txtTelefonoJugadorMousePressed(evt);
-            }
-        });
-        txtTelefonoJugador.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtTelefonoJugadorActionPerformed(evt);
             }
         });
         ventanaAgregarJugador.add(txtTelefonoJugador, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 310, 280, 30));
@@ -750,11 +735,6 @@ public class DatosGeneral extends javax.swing.JFrame {
                 txtDireccionJugadorMousePressed(evt);
             }
         });
-        txtDireccionJugador.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtDireccionJugadorActionPerformed(evt);
-            }
-        });
         ventanaAgregarJugador.add(txtDireccionJugador, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 220, 280, 30));
 
         jlblDireccionJugador.setFont(new java.awt.Font("Roboto Black", 0, 18)); // NOI18N
@@ -772,16 +752,8 @@ public class DatosGeneral extends javax.swing.JFrame {
         txtNombreJugador.setText("Ingrese el nombre del jugador");
         txtNombreJugador.setBorder(null);
         txtNombreJugador.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                txtNombreJugadorMouseClicked(evt);
-            }
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 txtNombreJugadorMousePressed(evt);
-            }
-        });
-        txtNombreJugador.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtNombreJugadorActionPerformed(evt);
             }
         });
         ventanaAgregarJugador.add(txtNombreJugador, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 130, 280, 30));
@@ -854,16 +826,8 @@ public class DatosGeneral extends javax.swing.JFrame {
         txtIngresarLogo.setText("Click aqui para cargar su logo");
         txtIngresarLogo.setBorder(null);
         txtIngresarLogo.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                txtIngresarLogoMouseClicked(evt);
-            }
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 txtIngresarLogoMousePressed(evt);
-            }
-        });
-        txtIngresarLogo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtIngresarLogoActionPerformed(evt);
             }
         });
         ventanaAgregarEquipo.add(txtIngresarLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 320, 280, 30));
@@ -917,11 +881,18 @@ public class DatosGeneral extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
     
-    
+    /**
+     * cambia a la ventana de gestion de equipos
+     * @param evt 
+     */
     private void jLblBtnDatosTorneoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLblBtnDatosTorneoMouseClicked
         contenedorVentanas.setSelectedIndex(1);
     }//GEN-LAST:event_jLblBtnDatosTorneoMouseClicked
 
+    /**
+     * cambia a la ventana de gestion de jugadores
+     * @param evt 
+     */
     private void jLblBtnDatosEquipoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLblBtnDatosEquipoMouseClicked
 
         modelTabla = (DefaultTableModel) tablaEquipos.getModel();
@@ -939,6 +910,10 @@ public class DatosGeneral extends javax.swing.JFrame {
 
     }//GEN-LAST:event_jLblBtnDatosEquipoMouseClicked
 
+    /**
+     * cambia a la ventana de tabla de encuentros
+     * @param evt 
+     */
     private void jLblBtnTablaEncuentrosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLblBtnTablaEncuentrosMouseClicked
 
         int a = torneo.getEquipos().size();
@@ -948,80 +923,144 @@ public class DatosGeneral extends javax.swing.JFrame {
         bgEncuentros.updateUI();
         contenedorVentanas.setSelectedIndex(4);
     }//GEN-LAST:event_jLblBtnTablaEncuentrosMouseClicked
-
+    
+    /**
+     * cierra el programa
+     * @param evt 
+     */
     private void btnExitMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnExitMouseClicked
 
         System.exit(0);
 
     }//GEN-LAST:event_btnExitMouseClicked
 
+    /**
+     * permite el movimiento de la ventana por medio de la barra superior
+     * @param evt 
+     */
     private void barraSuperiorMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_barraSuperiorMouseDragged
         int x = evt.getXOnScreen();
         int y = evt.getYOnScreen();
         this.setLocation(x - xMouse, y - yMouse);
     }//GEN-LAST:event_barraSuperiorMouseDragged
 
+    /**
+     * obtiene la posicion del mouse cuando se le da click a la barra superior
+     * @param evt 
+     */
     private void barraSuperiorMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_barraSuperiorMousePressed
 
         xMouse = evt.getX();
         yMouse = evt.getY();
     }//GEN-LAST:event_barraSuperiorMousePressed
 
+    /**
+     * cambia de color el boton cuando el cursor pasa sobre el
+     * @param evt 
+     */
     private void jLblBtnDatosTorneoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLblBtnDatosTorneoMouseEntered
         Sound.mousePass();
         btnDatosTorneo.setBackground(Colors.MOUSE_ENTERED);
     }//GEN-LAST:event_jLblBtnDatosTorneoMouseEntered
 
+    /**
+     *cambia de color el boton cuando el cursor pasa sobre el
+     * @param evt 
+     */
     private void jLblBtnInicioMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLblBtnInicioMouseEntered
         Sound.mousePass();
         btnInicio.setBackground(Colors.MOUSE_ENTERED);
 
     }//GEN-LAST:event_jLblBtnInicioMouseEntered
 
+    /**
+     *cambia de color el boton cuando el cursor pasa sale de el
+     * @param evt 
+     */
     private void jLblBtnInicioMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLblBtnInicioMouseExited
         btnInicio.setBackground(Colors.MOUSE_EXITED);
     }//GEN-LAST:event_jLblBtnInicioMouseExited
 
+    /**
+     * cambia de color el boton cuando el cursor pasa sale de el
+     * @param evt 
+     */
     private void jLblBtnDatosTorneoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLblBtnDatosTorneoMouseExited
         btnDatosTorneo.setBackground(Colors.MOUSE_EXITED);
     }//GEN-LAST:event_jLblBtnDatosTorneoMouseExited
-
+    
+    /**
+     * cambia de color el boton cuando el cursor pasa sobre el
+     * @param evt 
+     */
     private void jLblBtnDatosEquipoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLblBtnDatosEquipoMouseEntered
         Sound.mousePass();
         btnDatosEquipo.setBackground(Colors.MOUSE_ENTERED);
     }//GEN-LAST:event_jLblBtnDatosEquipoMouseEntered
-
+    
+    /**
+     * cambia de color el boton cuando el cursor sale de el
+     * @param evt 
+     */
     private void jLblBtnDatosEquipoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLblBtnDatosEquipoMouseExited
         btnDatosEquipo.setBackground(Colors.MOUSE_EXITED);
     }//GEN-LAST:event_jLblBtnDatosEquipoMouseExited
-
+    
+    /**
+     * cambia de color el boton cuando el cursor pasa sobre de el
+     * @param evt 
+     */
     private void jLblBtnDatosJugadoresMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLblBtnDatosJugadoresMouseEntered
         Sound.mousePass();
         btnDatosJugadores.setBackground(Colors.MOUSE_ENTERED);
     }//GEN-LAST:event_jLblBtnDatosJugadoresMouseEntered
-
+    
+    /**
+     * cambia de color el boton cuando el cursor pasa sobre de el
+     * @param evt 
+     */
     private void jLblBtnDatosJugadoresMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLblBtnDatosJugadoresMouseExited
-        btnDatosJugadores.setBackground(new Color(48, 76, 134));
+        btnDatosJugadores.setBackground(Colors.MOUSE_EXITED);
     }//GEN-LAST:event_jLblBtnDatosJugadoresMouseExited
 
+    /**
+     * cambia de color el boton cuando el cursor pasa sobre de el
+     * @param evt 
+     */
     private void jLblBtnTablaEncuentrosMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLblBtnTablaEncuentrosMouseEntered
         Sound.mousePass();
-        btnTablaEncuentro.setBackground(new Color(65, 168, 224));
+        btnTablaEncuentro.setBackground(Colors.MOUSE_ENTERED);
     }//GEN-LAST:event_jLblBtnTablaEncuentrosMouseEntered
 
+    /**
+     * cambia de color el boton cuando el cursor sale de el
+     * @param evt 
+     */
     private void jLblBtnTablaEncuentrosMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLblBtnTablaEncuentrosMouseExited
-        btnTablaEncuentro.setBackground(new Color(48, 76, 134));
+        btnTablaEncuentro.setBackground(Colors.MOUSE_EXITED);
     }//GEN-LAST:event_jLblBtnTablaEncuentrosMouseExited
 
+    /**
+     * nos envia a la ventana de inicio
+     * @param evt 
+     */
     private void jLblBtnInicioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLblBtnInicioMouseClicked
         contenedorVentanas.setSelectedIndex(0);
     }//GEN-LAST:event_jLblBtnInicioMouseClicked
 
+    /**
+     * cambiamos a la ventana de alta de equipos
+     * @param evt 
+     */
     private void btnAgregarEquipoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarEquipoActionPerformed
         contenedorVentanas.setSelectedIndex(6);
         previsualizadorLogo.removeAll();
     }//GEN-LAST:event_btnAgregarEquipoActionPerformed
 
+    /**
+     * cambiamos a la ventana de alta de jugadores
+     * @param evt 
+     */
     private void jLblBtnDatosJugadoresMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLblBtnDatosJugadoresMouseClicked
         modelTabla = (DefaultTableModel) tablaEquipos1.getModel();
         equipoService.mostrarEquipos(torneo.getEquipos(), modelTabla);
@@ -1047,10 +1086,19 @@ public class DatosGeneral extends javax.swing.JFrame {
         contenedorVentanas.setSelectedIndex(3);
     }//GEN-LAST:event_jLblBtnDatosJugadoresMouseClicked
 
+    /**
+     * cambiamos a la ventana de alta de jugadores
+     * @param evt 
+     */
     private void btnAgregarJugadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarJugadorActionPerformed
         contenedorVentanas.setSelectedIndex(5);
     }//GEN-LAST:event_btnAgregarJugadorActionPerformed
-
+    
+    /**
+     * obtenemos el id del equipo seleccionado en la tabla de equipos y
+     * mostramos la lista de equipos asociado a los mismos.
+     * @param evt 
+     */
     private void tablaEquipos1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tablaEquipos1MouseClicked
         idEquipo = tablaEquipos1.getValueAt(tablaEquipos1.getSelectedRow(), 0).toString();
 
@@ -1064,6 +1112,10 @@ public class DatosGeneral extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_tablaEquipos1MouseClicked
 
+    /**
+     * le da evento al campo de texto
+     * @param evt 
+     */
     private void txtNombreEquipoMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtNombreEquipoMousePressed
 
         if (txtNombreEquipo.getText().equals("Ingrese el nombre del equipo")) {
@@ -1075,6 +1127,10 @@ public class DatosGeneral extends javax.swing.JFrame {
 
     }//GEN-LAST:event_txtNombreEquipoMousePressed
 
+    /**
+     * le da evento al boton continuar
+     * @param evt 
+     */
     private void btnContinuar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnContinuar1ActionPerformed
         continuar = false;
 
@@ -1109,6 +1165,10 @@ public class DatosGeneral extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnContinuar1ActionPerformed
 
+    /**
+     * le da evento al boton continuar
+     * @param evt 
+     */
     private void btnContinuarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnContinuarActionPerformed
         if (!txtNombreJugador.getText().equals(
                 DefaultMsg.IN_NOMBREJUGADOR)
@@ -1146,7 +1206,11 @@ public class DatosGeneral extends javax.swing.JFrame {
         }
 
     }//GEN-LAST:event_btnContinuarActionPerformed
-
+    
+    /**
+     * le da evento al campo de texto
+     * @param evt 
+     */
     private void txtNumeroJugadorMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtNumeroJugadorMousePressed
         if (txtNumeroJugador.getText().equals("Ingrese el número con el que jugará")) {
 
@@ -1179,10 +1243,10 @@ public class DatosGeneral extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_txtNumeroJugadorMousePressed
 
-    private void txtNumeroJugadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNumeroJugadorActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtNumeroJugadorActionPerformed
-
+    /**
+     * le da evento al campo de texto
+     * @param evt 
+     */
     private void txtTelefonoJugadorMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtTelefonoJugadorMousePressed
         if (txtTelefonoJugador.getText().equals("Ingrese el teléfono del jugador")) {
 
@@ -1213,10 +1277,10 @@ public class DatosGeneral extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_txtTelefonoJugadorMousePressed
 
-    private void txtTelefonoJugadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTelefonoJugadorActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtTelefonoJugadorActionPerformed
-
+    /**
+     * le da evento al campo de texto
+     * @param evt 
+     */
     private void txtDireccionJugadorMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtDireccionJugadorMousePressed
 
         if (txtDireccionJugador.getText().equals("Ingrese la dirección del jugador")) {
@@ -1249,14 +1313,10 @@ public class DatosGeneral extends javax.swing.JFrame {
 
     }//GEN-LAST:event_txtDireccionJugadorMousePressed
 
-    private void txtDireccionJugadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDireccionJugadorActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtDireccionJugadorActionPerformed
-
-    private void txtNombreJugadorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtNombreJugadorMouseClicked
-
-    }//GEN-LAST:event_txtNombreJugadorMouseClicked
-
+    /**
+     * le da evento al campo de texto
+     * @param evt 
+     */
     private void txtNombreJugadorMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtNombreJugadorMousePressed
 
         if (txtNombreJugador.getText().equals("Ingrese el nombre del jugador")) {
@@ -1289,10 +1349,10 @@ public class DatosGeneral extends javax.swing.JFrame {
 
     }//GEN-LAST:event_txtNombreJugadorMousePressed
 
-    private void txtNombreJugadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombreJugadorActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtNombreJugadorActionPerformed
-
+    /**
+     * carga un logo para el equipo
+     * @param evt 
+     */
     private void txtIngresarLogoMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtIngresarLogoMousePressed
         JFileChooser selectImage = new JFileChooser();
         String ruta;
@@ -1316,15 +1376,10 @@ public class DatosGeneral extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_txtIngresarLogoMousePressed
 
-    private void txtIngresarLogoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtIngresarLogoMouseClicked
-
-
-    }//GEN-LAST:event_txtIngresarLogoMouseClicked
-
-    private void txtIngresarLogoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIngresarLogoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtIngresarLogoActionPerformed
-
+    /**
+     * carga una imagen generica
+     * @param evt 
+     */
     private void cargarImagenGenericaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cargarImagenGenericaMouseClicked
         String ruta = Images.LOGOGENERICO;
         txtIngresarLogo.setText(ruta);
@@ -1337,6 +1392,10 @@ public class DatosGeneral extends javax.swing.JFrame {
         previsualizadorLogo.setIcon(iconoEquipo);
     }//GEN-LAST:event_cargarImagenGenericaMouseClicked
 
+    /**
+     * boton para cancelar la alta de un jugador
+     * @param evt 
+     */
     private void btnCancelarAltaJugadorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCancelarAltaJugadorMouseClicked
 
         contenedorVentanas.setSelectedIndex(3);
@@ -1351,6 +1410,10 @@ public class DatosGeneral extends javax.swing.JFrame {
         txtDireccionJugador.setForeground(Color.gray);
     }//GEN-LAST:event_btnCancelarAltaJugadorMouseClicked
 
+    /**
+     * boton para cancelar la alta de un equipo
+     * @param evt 
+     */
     private void cancelarAltaEquipoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cancelarAltaEquipoMouseClicked
         contenedorVentanas.setSelectedIndex(2);
         txtNombreEquipo.setText("Ingrese el nombre del equipo");
@@ -1361,14 +1424,9 @@ public class DatosGeneral extends javax.swing.JFrame {
         previsualizadorLogo.updateUI();
     }//GEN-LAST:event_cancelarAltaEquipoMouseClicked
 
-    private void txtCategoria1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCategoria1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtCategoria1ActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel backgroundEquipos;
-    private javax.swing.JPanel backgroundInicio;
     private javax.swing.JPanel backgroundPrincipal;
     private javax.swing.JLabel backgroundViewPrincipal;
     private javax.swing.JPanel barraDeNavegacion;
@@ -1435,6 +1493,7 @@ public class DatosGeneral extends javax.swing.JFrame {
     private javax.swing.JTextField txtTelefonoJugador;
     private javax.swing.JPanel ventanaAgregarEquipo;
     private javax.swing.JPanel ventanaAgregarJugador;
+    private javax.swing.JPanel ventanaDatosTorneo;
     private javax.swing.JPanel ventanaGestionEquipos;
     private javax.swing.JPanel ventanaGestionJugadores;
     private javax.swing.JPanel ventanaTablaEncuentros;

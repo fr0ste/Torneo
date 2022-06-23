@@ -13,12 +13,21 @@
 package utilidades;
 
 public class DefaultMsg {
-
-    public static final String IN_NOMBREJUGADOR = "Ingrese el nombre del jugador";
-    public static final String IN_TELEFONOJUGADOR = "Ingrese el teléfono del jugador";
-    public static final String IN_DIRECCIONJUGADOR = "Ingrese la dirección del jugador";
-    public static final String IN_NUMEROJUGADOR = "Ingrese el número con el que jugará";
-    public static final String IN_NOMBREEQUIPO = "Ingrese el nombre del equipo";
-    public static final String IN_LOGOEQUIPO = "Click aqui para cargar su logo";
+    
+    public static final String IN_NOMBREJUGADOR =
+            "Ingrese el nombre del jugador";
+    public static final String IN_TELEFONOJUGADOR = 
+            "Ingrese el teléfono del jugador";
+    public static final String IN_DIRECCIONJUGADOR = 
+            "Ingrese la dirección del jugador";
+    public static final String IN_NUMEROJUGADOR = 
+            "Ingrese el número con el que jugará";
+    public static final String IN_NOMBREEQUIPO = 
+            "Ingrese el nombre del equipo";
+    public static final String IN_LOGOEQUIPO = 
+            "Click aqui para cargar su logo";
+    public static final String IN_NOMBRETORNEO = "Ingrese el nombre del torneo";
+    public static final String IN_MENSAJEERROR = "Rellene los campos";
+    public static final String IN_MENSAJENAME = "ingrese un nombre";
  
 }
