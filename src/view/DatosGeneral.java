@@ -174,7 +174,7 @@ public class DatosGeneral extends javax.swing.JFrame {
         btnExit.setForeground(new java.awt.Color(255, 51, 51));
         btnExit.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         btnExit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/remove.png"))); // NOI18N
-        btnExit.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnExit.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnExit.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnExitMouseClicked(evt);
@@ -194,7 +194,7 @@ public class DatosGeneral extends javax.swing.JFrame {
             .addComponent(btnExit, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        backgroundPrincipal.add(barraSuperior, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 820, 40));
+        backgroundPrincipal.add(barraSuperior, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 820, 10));
 
         barraDeNavegacion.setBackground(new java.awt.Color(48, 76, 134));
         barraDeNavegacion.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -216,7 +216,7 @@ public class DatosGeneral extends javax.swing.JFrame {
         jLblBtnInicio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/home.png"))); // NOI18N
         jLblBtnInicio.setText("Inicio");
         jLblBtnInicio.setToolTipText("");
-        jLblBtnInicio.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLblBtnInicio.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jLblBtnInicio.setMaximumSize(new java.awt.Dimension(30, 20));
         jLblBtnInicio.setMinimumSize(new java.awt.Dimension(30, 20));
         jLblBtnInicio.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -256,7 +256,7 @@ public class DatosGeneral extends javax.swing.JFrame {
         jLblBtnDatosTorneo.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLblBtnDatosTorneo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/trophy.png"))); // NOI18N
         jLblBtnDatosTorneo.setText("Datos del torneo");
-        jLblBtnDatosTorneo.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLblBtnDatosTorneo.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jLblBtnDatosTorneo.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLblBtnDatosTorneoMouseClicked(evt);
@@ -294,7 +294,7 @@ public class DatosGeneral extends javax.swing.JFrame {
         jLblBtnDatosEquipo.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLblBtnDatosEquipo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/team.png"))); // NOI18N
         jLblBtnDatosEquipo.setText("Datos de equipos");
-        jLblBtnDatosEquipo.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLblBtnDatosEquipo.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jLblBtnDatosEquipo.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLblBtnDatosEquipoMouseClicked(evt);
@@ -313,7 +313,7 @@ public class DatosGeneral extends javax.swing.JFrame {
             btnDatosEquipoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(btnDatosEquipoLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLblBtnDatosEquipo, javax.swing.GroupLayout.DEFAULT_SIZE, 154, Short.MAX_VALUE))
+                .addComponent(jLblBtnDatosEquipo, javax.swing.GroupLayout.PREFERRED_SIZE, 154, Short.MAX_VALUE))
         );
         btnDatosEquipoLayout.setVerticalGroup(
             btnDatosEquipoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -332,7 +332,7 @@ public class DatosGeneral extends javax.swing.JFrame {
         jLblBtnDatosJugadores.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLblBtnDatosJugadores.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/player.png"))); // NOI18N
         jLblBtnDatosJugadores.setText("Datos de jugadores");
-        jLblBtnDatosJugadores.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLblBtnDatosJugadores.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jLblBtnDatosJugadores.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLblBtnDatosJugadoresMouseClicked(evt);
@@ -351,7 +351,7 @@ public class DatosGeneral extends javax.swing.JFrame {
             btnDatosJugadoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(btnDatosJugadoresLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLblBtnDatosJugadores, javax.swing.GroupLayout.DEFAULT_SIZE, 154, Short.MAX_VALUE))
+                .addComponent(jLblBtnDatosJugadores, javax.swing.GroupLayout.PREFERRED_SIZE, 154, Short.MAX_VALUE))
         );
         btnDatosJugadoresLayout.setVerticalGroup(
             btnDatosJugadoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -370,7 +370,7 @@ public class DatosGeneral extends javax.swing.JFrame {
         jLblBtnTablaEncuentros.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLblBtnTablaEncuentros.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/vs.png"))); // NOI18N
         jLblBtnTablaEncuentros.setText("Tabla de encuentros");
-        jLblBtnTablaEncuentros.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLblBtnTablaEncuentros.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jLblBtnTablaEncuentros.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLblBtnTablaEncuentrosMouseClicked(evt);
@@ -389,7 +389,7 @@ public class DatosGeneral extends javax.swing.JFrame {
             btnTablaEncuentroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(btnTablaEncuentroLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLblBtnTablaEncuentros, javax.swing.GroupLayout.DEFAULT_SIZE, 154, Short.MAX_VALUE))
+                .addComponent(jLblBtnTablaEncuentros, javax.swing.GroupLayout.PREFERRED_SIZE, 154, Short.MAX_VALUE))
         );
         btnTablaEncuentroLayout.setVerticalGroup(
             btnTablaEncuentroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -411,11 +411,11 @@ public class DatosGeneral extends javax.swing.JFrame {
         informacionPrincipal.setForeground(new java.awt.Color(51, 51, 51));
         informacionPrincipal.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         informacionPrincipal.setText("Gestione su torneo con la opciones de lado izquierdo");
-        ventnaInicio.add(informacionPrincipal, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -10, 660, 110));
+        ventnaInicio.add(informacionPrincipal, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, 660, 20));
 
         backgroundViewPrincipal.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         backgroundViewPrincipal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/playerLogo2.png"))); // NOI18N
-        ventnaInicio.add(backgroundViewPrincipal, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 660, 610));
+        ventnaInicio.add(backgroundViewPrincipal, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 660, 520));
 
         contenedorVentanas.addTab("tab1", ventnaInicio);
 
@@ -674,7 +674,7 @@ public class DatosGeneral extends javax.swing.JFrame {
         btnContinuar.setBackground(new java.awt.Color(65, 168, 224));
         btnContinuar.setForeground(new java.awt.Color(0, 0, 0));
         btnContinuar.setText("continuar");
-        btnContinuar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnContinuar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnContinuar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnContinuarActionPerformed(evt);
@@ -803,7 +803,7 @@ public class DatosGeneral extends javax.swing.JFrame {
         btnContinuar1.setBackground(new java.awt.Color(65, 168, 224));
         btnContinuar1.setForeground(new java.awt.Color(0, 0, 0));
         btnContinuar1.setText("continuar");
-        btnContinuar1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnContinuar1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnContinuar1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnContinuar1ActionPerformed(evt);
@@ -847,7 +847,7 @@ public class DatosGeneral extends javax.swing.JFrame {
         cargarImagenGenerica.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
         cargarImagenGenerica.setForeground(new java.awt.Color(102, 102, 102));
         cargarImagenGenerica.setText("Click aqui para cargar una imagen generica.");
-        cargarImagenGenerica.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        cargarImagenGenerica.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         cargarImagenGenerica.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 cargarImagenGenericaMouseClicked(evt);
@@ -1334,7 +1334,7 @@ public class DatosGeneral extends javax.swing.JFrame {
     private void txtNombreJugadorMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtNombreJugadorMousePressed
 
         if (txtNombreJugador.getText().equals(
-                "Ingrese el nombre del jugador")) {
+                DefaultMsg.IN_NOMBREJUGADOR)) {
 
             txtNombreJugador.setText("");
             txtNombreJugador.setForeground(Color.black);
